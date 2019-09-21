@@ -58,4 +58,12 @@ $(document).ready(function() {
     $(this).parents('.btn-group').find('button .caption').text($(this).text());
     selectDownloads();
   });
+
+  $('.nav-dropdown-container').mouseover(function(){
+    $('.nav-dropdown').css('display', 'block');
+  });
+
+  $('.nav-dropdown-container').mouseleave(function(){
+    $('.nav-dropdown').css('display', 'none');
+  });
 });

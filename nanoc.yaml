@@ -63,14 +63,36 @@ data_sources:
     # The encoding to use for input files. If your input files are not in
     # UTF-8 (which they should be!), change this.
     encoding: utf-8
+    content_dir: content/en
+  -
+    type: filesystem_unified
+    identifier_type: legacy
+    items_root: /ja
+    layouts_root: /
+    layouts_dir: null
+    allow_periods_in_identifiers: false
+    encoding: utf-8
+    content_dir: content/ja
   -
     type: repo_docs
     identifier_type: legacy
     items_root: /docs/prometheus/latest/
     config:
       name: 'latest (2.8)'
-      repository: https://github.com/knj4484/prometheus.git
+      repository: file:///Users/knj4484/Downloads/github/prometheus/prometheus/
       refspec: release-ja-2.8
+      lang: en
+      root: docs/en/
+  -
+    type: repo_docs
+    identifier_type: legacy
+    items_root: /ja/docs/prometheus/latest/
+    config:
+      name: 'latest (2.8)'
+      repository: file:///Users/knj4484/Downloads/github/prometheus/prometheus/
+      refspec: release-ja-2.8
+      lang: ja
+      root: docs/ja/
   -
     type: repo_docs
     identifier_type: legacy
@@ -80,6 +102,19 @@ data_sources:
       repository: https://github.com/knj4484/prometheus.git
       refspec: release-ja-2.8
       canonical: /docs/prometheus/latest/
+      lang: en
+      root: docs/en/
+  -
+    type: repo_docs
+    identifier_type: legacy
+    items_root: /ja/docs/prometheus/2.8/
+    config:
+      name: '2.8'
+      repository: https://github.com/knj4484/prometheus.git
+      refspec: release-ja-2.8
+      canonical: /docs/prometheus/latest/
+      lang: ja
+      root: docs/ja/
   -
     type: repo_docs
     identifier_type: legacy

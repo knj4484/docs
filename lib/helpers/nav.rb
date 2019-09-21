@@ -70,6 +70,12 @@ def hidden?(item)
   Versioned.versioned?(item) && !Versioned.current?(item[:repo_docs], @item_rep)
 end
 
+def nav_items(item, items)
+  top_dir = item.path.split('/')[1]
+  docs_dir = top_dir == 'docs' ? '/docs/' : "/#{top_dir}/docs/"
+  items[docs_dir].children.sort_by { |i| i[:sort_rank] || 0 }
+end
+
 # Versioned repository docs related functions.
 # TODO: Refactor and clean up all this code.
 module Versioned

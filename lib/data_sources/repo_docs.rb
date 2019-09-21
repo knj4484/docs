@@ -55,6 +55,6 @@ class RepoDocsDataSource < ::Nanoc::DataSources::Filesystem
   def repo_path
     c = config.fetch(:config)
     base = c.fetch(:repo_base, 'repositories')
-    File.join(base, File.basename(c[:repository]), c[:name])
+    File.join(base, File.basename(c[:repository]), "#{c[:lang]}-#{c[:name]}")
   end
 end

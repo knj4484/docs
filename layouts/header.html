@@ -62,16 +62,26 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"><img src="/assets/prometheus_logo_grey.svg" alt="Prometheus logo"> Prometheus</a>
+          <a class="navbar-brand" href="<%= langulage_path_prefix(item) %>/"><img src="/assets/prometheus_logo_grey.svg" alt="Prometheus logo"> Prometheus</a>
         </div>
         <div class="collapse navbar-collapse" id="navbar">
           <ul class="nav navbar-nav navbar-right main-nav">
-            <li><a href="/docs/introduction/overview/">Docs</a></li>
+            <li><a href="<%= langulage_path_prefix(item) %>/docs/introduction/overview/">Docs</a></li>
             <li><a href="/download/">Download</a></li>
             <li><a href="/community/">Community</a></li>
             <li><a href="/blog/">Blog</a></li>
             <li><a href="https://github.com/prometheus"><i class="fa fa-github"></i></a></li>
             <li><a href="https://twitter.com/PrometheusIO"><i class="fa fa-twitter"></i></a></li>
+            <% if translations = find_translations(item, items) and ! translations.empty? %>
+            <li class="nav-dropdown-container language">
+              <a>Language</a>
+              <ul class="nav-dropdown">
+                <% translations.each do |t| %>
+                <li><a href="<%= t[:path] %>"><%= t[:language_code] %></a></li>
+                <% end %>
+              </ul>
+            </li>
+            <% end %>
           </ul>
         </div>
       </div>
