@@ -32,7 +32,7 @@ cd grafana-2.5.0/
 
 デフォルトでは、Grafanaは[http://localhost:3000](http://localhost:3000)をリッスンしている。デフォルトのログインは、"admin" / "admin"である。
 
-### Creating a Prometheus data source
+### Prometheusデータソースの作成
 
 Prometheusデータソースを作成するには
 

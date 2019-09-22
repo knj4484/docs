@@ -9,7 +9,7 @@ nav_icon: sliders
 [Alertmanager](https://github.com/prometheus/alertmanager)は、コマンドラインフラグと設定ファイルを通して設定される。
 コマンドラインフラグは、不変のシステムパラメーターを設定し、設定ファイルは、inhibitionルール、通知ルーティング、通知レシーバーを定義する。
 
-[visual editor](/webtools/alerting/routing-tree-editor)が、ルーティングツリーの構築の補助となる。
+[visual editor](/ja/webtools/alerting/routing-tree-editor)が、ルーティングツリーの構築の補助となる。
 
 利用可能な全てのコマンドラインフラグを見るには、`alertmanager -h`を実行する。
 
@@ -263,7 +263,7 @@ tls_config:
 
 receiverは、1つ以上の通知連携の名前付きの設定である。
 
-__新しいレシーバーは積極的に追加されていないので、独自の通知連携を[webhook](/docs/alerting/configuration/#webhook_config)レシーバーで実装することを推奨する。__
+__新しいレシーバーは積極的に追加されていないので、独自の通知連携を[webhook](/ja/docs/alerting/configuration/#webhook_config)レシーバーで実装することを推奨する。__
 
 ```yaml
 # ユニークなレシーバーの名前
@@ -646,7 +646,7 @@ Alertmanagerは、HTTP POSTリクエストを以下のJSONのフォーマット�
 }
 ```
 
-この機能を利用した[連携のリスト](/docs/operating/integrations/#alertmanager-webhook-receiver)がある。
+この機能を利用した[連携のリスト](/ja/docs/operating/integrations/#alertmanager-webhook-receiver)がある。
 
 ## `<wechat_config>`
 

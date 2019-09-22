@@ -7,7 +7,7 @@ sort_rank: 6
 
 メトリクスは、単純な[テキストベース](#text-based-format)の出力フォーマットを利用してPrometheusに出力することができる。
 このフォーマットを実装した様々なクライアントライブラリがある。
-好みの言語にクライアントライブラリがなければ、[自分で実装する](/docs/instrumenting/writing_clientlibs/)ことができる。
+好みの言語にクライアントライブラリがなければ、[自分で実装する](/ja/docs/instrumenting/writing_clientlibs/)ことができる。
 
 NOTE: 古いバージョンのPrometheusには、現在のテキストベースのフォーマットに加えて、[Protocol Buffers](https://developers.google.com/protocol-buffers/)（Protobuf）をベースにした出力フォーマットをサポートしているバージョンもあるが、
 バージョン2.0からは、PrometheusはProtobufベースのフォーマットをサポートしない。

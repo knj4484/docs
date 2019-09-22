@@ -13,7 +13,7 @@ cAdvisorは、初期状態で、Prometheusのメトリクスを出力する。
 
 ## Prometheusの設定
 
-まず、cAdvisorからメトリクスをscrapeするように[Prometheusを設定する](/docs/prometheus/latest/configuration/configuration)必要がある。`prometheus.yml`ファイルを作成し、この設定のようにする。
+まず、cAdvisorからメトリクスをscrapeするように[Prometheusを設定する](/ja/docs/prometheus/latest/configuration/configuration)必要がある。`prometheus.yml`ファイルを作成し、この設定のようにする。
 
 ```yaml
 scrape_configs:
@@ -105,7 +105,7 @@ cAdvisorのweb UIは、`http://localhost:8080`で見ることが出来る。特�
 ## expressionブラウザでのメトリクスの調査
 
 cAdvisorのweb UIは、cAdvisorが監視しているものを調査するには便利だが、コンテナのメトリクスの調査のためのインターフェースを提供していない。
-そのためには、`http://localhost:9090/graph`で見られるPrometheusの[expressionブラウザ](/docs/visualization/browser)が必要である。
+そのためには、`http://localhost:9090/graph`で見られるPrometheusの[expressionブラウザ](/ja/docs/visualization/browser)が必要である。
 以下のようなPrometheusのexpressionバーにexpressionを入力することが出来る。
 
 ![Prometheus expression bar](/assets/prometheus-expression-bar.png)

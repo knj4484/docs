@@ -11,12 +11,12 @@ toc: full-width
 ### Prometheusとは何か？
 
 Prometheusは、活発なエコシステムを持つ、オープンソースのシステム監視およびアラートのツールキットである。
-[概要](/docs/introduction/overview/)を参照。
+[概要](/ja/docs/introduction/overview/)を参照。
 
 
 ### Prometheusを他の監視システムと比較してどうか？
 
-[比較](/docs/introduction/comparison/)のページを参照。
+[比較](/ja/docs/introduction/comparison/)のページを参照。
 
 ### Prometheusはどのような依存があるか？
 
@@ -59,7 +59,7 @@ HTTPを通してpullすることには、たくさんの利点がある。
 
 概して、pushよりもpullする方が少しだけ良いと信じているが、監視システムを検討する際の重要な点ではないであろう。
 
-pushしなければならない場合のために、[Pushgateway](/docs/instrumenting/pushing/)を提供している。
+pushしなければならない場合のために、[Pushgateway](/ja/docs/instrumenting/pushing/)を提供している。
 
 ### どうやってPrometheusにログを取り込みますか？
 
@@ -106,8 +106,8 @@ Prometheusは[Apache 2.0](https://github.com/prometheus/prometheus/blob/master/L
 
 ### ダッシュボードを作成できますか？
 
-できる。プロダクションでの利用には[Grafana](/docs/visualization/grafana/)を推奨している。
-[コンソールテンプレート](/docs/visualization/consoles/)もある。
+できる。プロダクションでの利用には[Grafana](/ja/docs/visualization/grafana/)を推奨している。
+[コンソールテンプレート](/ja/docs/visualization/consoles/)もある。
 
 ### タイムゾーンを変更できるか？なぜ全てUTCなのか？
 
@@ -118,9 +118,9 @@ Prometheusは[Apache 2.0](https://github.com/prometheus/prometheus/blob/master/L
 ### どの言語にメトリクスを組み込むためのライブラリがありますか？
 
 自分のサービスにPrometheusのメトリクスを組み込むためのライブラリはたくさんある。
-詳細は[クライアントライブラリ](/docs/instrumenting/clientlibs/)のドキュメントを参照すること。
+詳細は[クライアントライブラリ](/ja/docs/instrumenting/clientlibs/)のドキュメントを参照すること。
 
-新しい言語のためのクライアントライブラリに貢献する気がある場合、[出力フォーマット](/docs/instrumenting/exposition_formats/)を参照すること。
+新しい言語のためのクライアントライブラリに貢献する気がある場合、[出力フォーマット](/ja/docs/instrumenting/exposition_formats/)を参照すること。
 
 ### マシンを監視することはできますか？
 
@@ -132,12 +132,12 @@ Prometheusは[Apache 2.0](https://github.com/prometheus/prometheus/blob/master/L
 
 ### バッチジョブを関することはできますか？
 
-[Pushgateway](/docs/instrumenting/pushing/)を使うことでできる。
-バッチジョブの監視について[ベストプラクティス](/docs/instrumenting/pushing/)も参照すること。
+[Pushgateway](/ja/docs/instrumenting/pushing/)を使うことでできる。
+バッチジョブの監視について[ベストプラクティス](/ja/docs/instrumenting/pushing/)も参照すること。
 
 ### どんなアプリケーションがPrometheusですぐに監視できますか？
 
-[exporterとインテグレーションの一覧](/docs/instrumenting/exporters/)を参照すること。
+[exporterとインテグレーションの一覧](/ja/docs/instrumenting/exporters/)を参照すること。
 
 ### JMXでJVMアプリケーションを監視できますか？
 
@@ -179,7 +179,7 @@ Prometheusが利用可能なメモリ量を設定するために、[メモリ利
 ### なぜPrometheusサーバーはTLSや認証をサポートしないのですか？追加できますか？
 
 注意：Prometheusチームは、2018年8月11日のdevelopment summitでこれに関する姿勢を変更した。
-提供しているエンドポイントのTLSと認証のサポートは[プロジェクトのロードマップ](/docs/introduction/roadmap/#tls-and-authentication-in-http-serving-endpoints)に記載されている。
+提供しているエンドポイントのTLSと認証のサポートは[プロジェクトのロードマップ](/ja/docs/introduction/roadmap/#tls-and-authentication-in-http-serving-endpoints)に記載されている。
 コードが変更されたら、このドキュメントは更新されるだろう。
 
 TLSと認証はよくリクエストされる機能ではあるが、意図的に、Prometheusのサーバーサイドのコンポーネントに実装してこなかった。
@@ -190,4 +190,4 @@ TLSや認証が必要な場合、Prometheusの前にリバースプロキシを�
 Nginx](https://www.robustperception.io/adding-basic-auth-to-prometheus-with-nginx/)を参照すること。
 
 これはPrometheusへの接続に限った話である。
-Prometheusは、[TLSや認証がかかったターゲットのスクレイプ](/docs/operating/configuration/#%3Cscrape_config%3E)をサポートしている。他のPrometheusコンポーネントにも同様のサポートがある。
+Prometheusは、[TLSや認証がかかったターゲットのスクレイプ](/ja/docs/operating/configuration/#%3Cscrape_config%3E)をサポートしている。他のPrometheusコンポーネントにも同様のサポートがある。

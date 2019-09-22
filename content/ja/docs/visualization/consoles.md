@@ -7,9 +7,9 @@ sort_rank: 3
 
 コンソールテンプレートによって、[Go templating language](http://golang.org/pkg/text/template/)で書かれた任意のコンソールを作成することができる。
 
-コンソールテンプレートは、簡単にバージョン管理できるテンプレートを作成する最も強力な方法である。ただ、学習コストは高いので、このスタイルの監視に慣れていないユーザーは、まず[Grafana](/docs/visualization/grafana/)を試すのが良い。
+コンソールテンプレートは、簡単にバージョン管理できるテンプレートを作成する最も強力な方法である。ただ、学習コストは高いので、このスタイルの監視に慣れていないユーザーは、まず[Grafana](/ja/docs/visualization/grafana/)を試すのが良い。
 
-## Getting started
+## 始める
 
 Prometheusには、コンソールのサンプル集がある。これらは稼働しているPrometheusの`/consoles/index.html.example`で見ることができ、
 Node Exporterが`job="node"`というラベルでスクレイプしているなら、Node Exporterのコンソールを表示する。
@@ -85,7 +85,7 @@ new PromConsole.Graph({
 
 `prom_right_table_head`と`prom_right_table_tail`テンプレートは、右側の表を含んでいる。これは必須ではない。
 
-`prom_query_drilldown`は、渡された式を評価し、フォーマットし、[expressionブラウザ](/docs/visualization/browser/)の式へリンクするテンプレートである。
+`prom_query_drilldown`は、渡された式を評価し、フォーマットし、[expressionブラウザ](/ja/docs/visualization/browser/)の式へリンクするテンプレートである。
 第1引数が式で、第2引数は単位、第3引数は出力のフォーマット方法である。第1引数のみ必須である。
 
 `prom_query_drilldown`の第3引数の正当な出力フォーマットは以下の通り。

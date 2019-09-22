@@ -13,7 +13,7 @@ sort_rank: 4
 いくつかのexporterは、GitHubの[公式Prometheus organization](https://github.com/prometheus)の一部として保守されている。
 それらは*official*と印してあり、他は外部で保守されている。
 
-より多くのexporterの開発を奨励しているが、それら全てが[ベストプラクティス](/docs/instrumenting/writing_exporters/)に従っているか調査することは出来ない。
+より多くのexporterの開発を奨励しているが、それら全てが[ベストプラクティス](/ja/docs/instrumenting/writing_exporters/)に従っているか調査することは出来ない。
 それらのexporterは、普通、GitHubのPrometheus organizationの外でホスティングされている。
 
 wikiページ[exporterのデフォルトポート](https://github.com/prometheus/prometheus/wiki/Default-port-allocations)は、exporterのもう一つのカタログとなっており、機能が重なっていたり開発中であるためにここに挙げられているないexporterを含んでいる。
@@ -174,7 +174,7 @@ wikiページ[exporterのデフォルトポート](https://github.com/prometheus
    * [Unbound exporter](https://github.com/kumina/unbound_exporter)
    * [Xen exporter](https://github.com/lovoo/xenstats_exporter)
 
-新しいexporterを開発する際には、[exporter開発ガイドライン](/docs/instrumenting/writing_exporters)に従って下さい。
+新しいexporterを開発する際には、[exporter開発ガイドライン](/ja/docs/instrumenting/writing_exporters)に従って下さい。
 [開発メーリングリスト](https://groups.google.com/forum/#!forum/prometheus-developers)に相談することも検討して下さい。どうすればあなたのexporterを可能な限り便利で安定的に出来るかアドバイスできれば幸いです。
 
 ## Prometheusメトリクスを出力するソフトウェア
@@ -219,7 +219,7 @@ wikiページ[exporterのデフォルトポート](https://github.com/prometheus
 
 このセクションは、各言語のコードにメトリクスを組み込むのに役立つライブラリやユーティリティの一覧である。
 これら自体は、Prometheusクライアントライブラリではなく、内部で通常のPrometheusクライアントライブラリを利用している。
-独自に保守されているソフトウェア全てと同様に、これら全てが[ベストプラクティス](/docs/instrumenting/writing_exporters/)に従っているか調査することは出来ない。
+独自に保守されているソフトウェア全てと同様に、これら全てが[ベストプラクティス](/ja/docs/instrumenting/writing_exporters/)に従っているか調査することは出来ない。
 
    * Clojure: [prometheus-clj](https://github.com/soundcloud/prometheus-clj)
    * Go: [go-metrics instrumentation library](https://github.com/armon/go-metrics)

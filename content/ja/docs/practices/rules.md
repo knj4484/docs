@@ -5,7 +5,7 @@ sort_rank: 6
 
 # レコーディングルール
 
-[レコーディングルール](/docs/prometheus/latest/configuration/recording_rules/)の一貫した命名体系によって、ルールの意味を一目で理解することが簡単になる。
+[レコーディングルール](/ja/docs/prometheus/latest/configuration/recording_rules/)の一貫した命名体系によって、ルールの意味を一目で理解することが簡単になる。
 また、不正確だったり意味のない計算が目立つようになり、間違いを避けることができる。
 
 このページは、集約を正しく行うにはどうすればいいかを記し、また命名規約を提示する。

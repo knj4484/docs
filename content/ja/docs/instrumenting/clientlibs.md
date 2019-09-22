@@ -6,7 +6,7 @@ sort_rank: 1
 # クライアントライブラリ
 
 自分のサービスの監視をするには、Prometheusクライアントライブラリのどれかを利用して、そのコードにメトリクス組み込みを追加する必要がある。
-それらのライブラリは、Prometheusの[メトリック型](/docs/concepts/metric_types/)を実装している。
+それらのライブラリは、Prometheusの[メトリック型](/ja/docs/concepts/metric_types/)を実装している。
 
 アプリケーションが書かれている言語に合わせてPrometheusクライアントライブラリを選択すること。
 これによって、内部メトリクスを定義し、アプリケーションのインスタンス上でHTTPのエンドポイントで出力出来るようになる。
@@ -35,7 +35,7 @@ sort_rank: 1
 クライアントライブラリは、PrometheusがHTTPのエンドポイントをscrapeすると、追跡中の全てのメトリクスのその時点の状態をPrometheusに送信する。
 
 もし利用可能なクライアントライブラリがなかったり、依存を避けたいのであれば、
-自分で[出力フォーマット](/docs/instrumenting/exposition_formats/)の一つを実装してメトリクスを出力することも可能である。
+自分で[出力フォーマット](/ja/docs/instrumenting/exposition_formats/)の一つを実装してメトリクスを出力することも可能である。
 
 新しいPrometheusクライアントライブラリを実装する際は、[クライアントの書き方のガイドライン](https://prometheus.io/docs/instrumenting/writing_clientlibs)に従ってください。
 [開発メーリングリスト](https://groups.google.com/forum/#!forum/prometheus-developers)に相談することも検討して下さい。

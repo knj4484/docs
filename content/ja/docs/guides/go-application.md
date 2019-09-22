@@ -57,7 +57,7 @@ curl http://localhost:2112/metrics
 
 上記のアプリケーションは、デフォルトのGoメトリクスのみを出力する。
 独自のアプリケーション固有のメトリクスを登録することもできる。
-この例では、その時点までに処理された操作数を数える[カウンター](/docs/concepts/metric_types/#counter)`myapp_processed_ops_total`を出力する。
+この例では、その時点までに処理された操作数を数える[カウンター](/ja/docs/concepts/metric_types/#counter)`myapp_processed_ops_total`を出力する。
 このカウンターは、2秒ごとに1ずつ増加する。
 
 ```go
@@ -116,7 +116,7 @@ curl http://localhost:2112/metrics
 myapp_processed_ops_total 5
 ```
 
-ローカルで稼働しているPrometheusインスタンスがこのアプリケーションからメトリクスを取得するように[設定](/docs/prometheus/latest/configuration/configuration/#<scrape_config>)できる。
+ローカルで稼働しているPrometheusインスタンスがこのアプリケーションからメトリクスを取得するように[設定](/ja/docs/prometheus/latest/configuration/configuration/#<scrape_config>)できる。
 `prometheus.yml`の設定例は以下の通り。
 
 ```yaml
@@ -131,7 +131,7 @@ scrape_configs:
 ## その他のGoクライアントの機能
 
 このガイドでは、PrometheusのGoクライアントライブラリで利用可能なほんの一握りの機能に触れただけである。
-[ゲージ](https://godoc.org/github.com/prometheus/client_golang/prometheus#Gauge)や[ヒストグラム](https://godoc.org/github.com/prometheus/client_golang/prometheus#Histogram)のような他の型のメトリクスを出力することもできるし、[グローバルでないレジストリ](https://godoc.org/github.com/prometheus/client_golang/prometheus#Registry)、[Pushgateway](/docs/instrumenting/pushing/)に[メトリクスをプッシュする](https://godoc.org/github.com/prometheus/client_golang/prometheus/push)関数、Prometheusと[Graphite](https://godoc.org/github.com/prometheus/client_golang/prometheus/graphite)の連携などもある。
+[ゲージ](https://godoc.org/github.com/prometheus/client_golang/prometheus#Gauge)や[ヒストグラム](https://godoc.org/github.com/prometheus/client_golang/prometheus#Histogram)のような他の型のメトリクスを出力することもできるし、[グローバルでないレジストリ](https://godoc.org/github.com/prometheus/client_golang/prometheus#Registry)、[Pushgateway](/ja/docs/instrumenting/pushing/)に[メトリクスをプッシュする](https://godoc.org/github.com/prometheus/client_golang/prometheus/push)関数、Prometheusと[Graphite](https://godoc.org/github.com/prometheus/client_golang/prometheus/graphite)の連携などもある。
 
 ## まとめ
 

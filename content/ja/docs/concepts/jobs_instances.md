@@ -22,9 +22,9 @@ Prometheusが監視対象をスクレイプするとき、監視対象を識別�
 * `job`: その監視対象が含まれるジョブの名前
 * `instance`: スクレイプされたURLの`<host>:<port>`の部分
 
-スクレイプしたデータにこれらのいずれかのラベルが既にあった場合の挙動は、`honor_labels`の設定値によって異なる。 詳細は、[スクレイプの設定のドキュメント](/docs/operating/configuration/#%3Cscrape_config%3E)を参照すること。
+スクレイプしたデータにこれらのいずれかのラベルが既にあった場合の挙動は、`honor_labels`の設定値によって異なる。 詳細は、[スクレイプの設定のドキュメント](/ja/docs/operating/configuration/#%3Cscrape_config%3E)を参照すること。
 
-それぞれのインスタンスのスクレイプで、Prometheusは以下の時系列に[サンプル](/docs/introduction/glossary#sample)を保存する。
+それぞれのインスタンスのスクレイプで、Prometheusは以下の時系列に[サンプル](/ja/docs/introduction/glossary#sample)を保存する。
 
 * `up{job="<job-name>", instance="<instance-id>"}`: スクレイプが成功したら`1`、失敗したら`0`
 * `scrape_duration_seconds{job="<job-name>", instance="<instance-id>"}`:

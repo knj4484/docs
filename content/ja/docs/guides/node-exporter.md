@@ -92,7 +92,7 @@ cd prometheus-*.*
 
 ## expressionブラウザによるNode Exporterメトリクスの調査
 
-これでPrometheusがNode Exporterインスタンスからメトリクスを取得しているので、PrometheusのUI（[expressionブラウザ](/docs/visualization/expression-browser)として知られる）を使ってそれらのメトリクスを調べることが出来る。
+これでPrometheusがNode Exporterインスタンスからメトリクスを取得しているので、PrometheusのUI（[expressionブラウザ](/ja/docs/visualization/expression-browser)として知られる）を使ってそれらのメトリクスを調べることが出来る。
 ブラウザで`localhost:9090/graph`を開いて、ページ上部のmain expression barを使って、expressionを入力する。
 expression barは、このように見える。
 

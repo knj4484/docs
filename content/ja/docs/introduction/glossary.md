@@ -60,7 +60,7 @@ Prometheusは、通常は、Prometheusシステムのコアのバイナリを指
 
 ### PromQL
 
-[PromQL](/docs/prometheus/latest/querying/basics/)とは、Prometheusクエリ言語（Prometheus Query Language）のことである。 PromQLによって、集約や予測、結合などを含む幅広い操作が可能となる。
+[PromQL](/ja/docs/prometheus/latest/querying/basics/)とは、Prometheusクエリ言語（Prometheus Query Language）のことである。 PromQLによって、集約や予測、結合などを含む幅広い操作が可能となる。
 
 ### Pushgateway
 

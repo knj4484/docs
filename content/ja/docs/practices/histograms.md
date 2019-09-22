@@ -11,7 +11,7 @@ sort_rank: 4
 
 ## Library support
 
-まずは、[ヒストグラム](/docs/concepts/metric_types/#histogram)と[サマリー](/docs/concepts/metric_types/#summary)のライブラリサポートを確認すること。
+まずは、[ヒストグラム](/ja/docs/concepts/metric_types/#histogram)と[サマリー](/ja/docs/concepts/metric_types/#summary)のライブラリサポートを確認すること。
 
 2つの型のうち1つしかサポートしていなかったり、サマリーの使い方に制限がある（[分位数（quantile）の計算](#quantiles)がない）ライブラリもある。
 
@@ -56,7 +56,7 @@ sort_rank: 4
 
 いわゆるφ分位数（0 ≤ φ ≤ 1）を計算するには、サマリーとヒストグラムの両方を使うことができる。 φ分位数とは、N個の観測値の中でφ*N番目に位置する観測値である。 φ分位数の例として、0.5分位数は中央値として知られている。 0.95分位数とは、95パーセンタイルのことである。
 
-サマリーとヒストグラムの本質的な違いとして、サマリーがクライアント側でφ分位数を計算して直接出力するのに対して、 ヒストグラムはバケットに分けられた観測数を出力し、分位数はサーバー側で[`histogram_quantile()`](/docs/prometheus/latest/querying/functions/#histogram_quantile)を利用してそれらのバケットから計算される。
+サマリーとヒストグラムの本質的な違いとして、サマリーがクライアント側でφ分位数を計算して直接出力するのに対して、 ヒストグラムはバケットに分けられた観測数を出力し、分位数はサーバー側で[`histogram_quantile()`](/ja/docs/prometheus/latest/querying/functions/#histogram_quantile)を利用してそれらのバケットから計算される。
 
 この2つの方法は、様々な違いをもたらす。
 
@@ -64,11 +64,11 @@ sort_rank: 4
 |---|-----------|---------
 | 必要な設定 | 観測値の期待される幅に対して適切なバケットを選ぶ | 所望のφ分位数とスライディングウィンドウを選ぶ。他のφ分位数とスライディングウィンドウは後から計算できない
 | クライアントのパフォーマンス | カウンターをインクリメントするだけで良いのでコストがとても低い | 流れていく分位数の計算をするためにコストが高い
-| サーバーのパフォーマンス | サーバーが分位数を計算しなければならない。リクエストに応じた計算が長すぎる場合（例えば巨大なダッシュボード）は、[レコーディングルール](/docs/prometheus/latest/configuration/recording_rules/#recording-rules)を利用することができる | サーバーサイドのコストは低い
+| サーバーのパフォーマンス | サーバーが分位数を計算しなければならない。リクエストに応じた計算が長すぎる場合（例えば巨大なダッシュボード）は、[レコーディングルール](/ja/docs/prometheus/latest/configuration/recording_rules/#recording-rules)を利用することができる | サーバーサイドのコストは低い
 | 時系列の数（`_sum`および`_count`以外） | 定したバケットにつき1つの時系列 | 設定した分位数につき1つの時系列
 | 分位数の誤差（下記の詳細を参照） | 関連するバケットの幅によって観測値の尺度で誤差が制限される | 設定可能な値によってφの尺度で誤差が制限される
-| φ分位数とスライディングウィンドウの指定 | [Prometheusの式](/docs/prometheus/latest/querying/functions/#histogram_quantile)によりアドホックに行う | クライアントで事前に設定される
-| 集約 | [Prometheusの式](/docs/prometheus/latest/querying/functions/#histogram_quantile)によりアドホックに行う | 一派的に[集約不可能](http://latencytipoftheday.blogspot.de/2014/06/latencytipoftheday-you-cant-average.html)
+| φ分位数とスライディングウィンドウの指定 | [Prometheusの式](/ja/docs/prometheus/latest/querying/functions/#histogram_quantile)によりアドホックに行う | クライアントで事前に設定される
+| 集約 | [Prometheusの式](/ja/docs/prometheus/latest/querying/functions/#histogram_quantile)によりアドホックに行う | 一派的に[集約不可能](http://latencytipoftheday.blogspot.de/2014/06/latencytipoftheday-you-cant-average.html)
 
 最後の項目は重要なので注意すること。 
 ここで、95%のリクエストに300ms以内に応答するというSLAに戻ってみよう。 
@@ -81,7 +81,7 @@ sort_rank: 4
     avg(http_request_duration_seconds{quantile="0.95"}) // BAD!
 
 ヒストグラムを使うと、[`histogram_quantile()`
-function](/docs/prometheus/latest/querying/functions/#histogram_quantile)によって集約できるようになる。
+function](/ja/docs/prometheus/latest/querying/functions/#histogram_quantile)によって集約できるようになる。
 
     histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (le)) // GOOD.
 

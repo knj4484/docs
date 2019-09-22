@@ -5,20 +5,20 @@ sort_rank: 5
 
 # インテグレーション
 
-[クライアントライブラリ](/docs/instrumenting/clientlibs/)、[エクスポーターおよび関連ライブラリ](/docs/instrumenting/exporters/)に加えて、Prometheusには一般的な連携ポイントが多くある。 このページでは、それらとのインテグレーションのうちいくつかを記載する。
+[クライアントライブラリ](/ja/docs/instrumenting/clientlibs/)、[エクスポーターおよび関連ライブラリ](/ja/docs/instrumenting/exporters/)に加えて、Prometheusには一般的な連携ポイントが多くある。 このページでは、それらとのインテグレーションのうちいくつかを記載する。
 
 機能が重なっていたり、開発中のものもあるので、全てのインテグレーションがここに記載されているわけではない。 [exporterデフォルトポート](https://github.com/prometheus/prometheus/wiki/Default-port-allocations)Wikiもこの種のexporter以外のインテグレーションのいくつかを含んでいる。
 
 ## ファイルサービスディスカバリー
 
-Prometheusがサポートしていないサービスディスカバリーの仕組みに対しては、[ファイルベースのサービスディスカバリー](/docs/operating/configuration/#%3Cfile_sd_config%3E)が連携のインターフェースを提供している。
+Prometheusがサポートしていないサービスディスカバリーの仕組みに対しては、[ファイルベースのサービスディスカバリー](/ja/docs/operating/configuration/#%3Cfile_sd_config%3E)が連携のインターフェースを提供している。
 
  * [Docker Swarm](https://github.com/ContainerSolutions/prometheus-swarm-discovery)
  * [Scaleway](https://github.com/scaleway/prometheus-scw-sd)
 
 ## Remote Endpoints and Storage
 
-Prometheusの[remote write](/docs/operating/configuration/#%3Cremote_write%3E)と[remote read](/docs/operating/configuration/#%3Cremote_read%3E)の機能によって、値を透過的に送信・受信することができる。 これは、長期ストレージを主な目的としている。 ここに挙げられたソリューションが自分のデータ量を捌けるかを慎重に評価することをお勧めする。
+Prometheusの[remote write](/ja/docs/operating/configuration/#%3Cremote_write%3E)と[remote read](/ja/docs/operating/configuration/#%3Cremote_read%3E)の機能によって、値を透過的に送信・受信することができる。 これは、長期ストレージを主な目的としている。 ここに挙げられたソリューションが自分のデータ量を捌けるかを慎重に評価することをお勧めする。
 
   * [AppOptics](https://github.com/solarwinds/prometheus2appoptics): write
   * [Chronix](https://github.com/ChronixDB/chronix.ingester): write
@@ -41,7 +41,7 @@ Prometheusの[remote write](/docs/operating/configuration/#%3Cremote_write%3E)�
 
 ## Alertmanager Webhook Receiver
 
-Alertmanagerがサポートしていない通知の仕組みに対しては、[webhook receiver](/docs/alerting/configuration/#webhook_config)によって連携することができる。
+Alertmanagerがサポートしていない通知の仕組みに対しては、[webhook receiver](/ja/docs/alerting/configuration/#webhook_config)によって連携することができる。
 
   * [AWS SNS](https://github.com/DataReply/alertmanager-sns-forwarder)
   * [DingTalk](https://github.com/timonwong/prometheus-webhook-dingtalk)

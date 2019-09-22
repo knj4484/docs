@@ -43,7 +43,7 @@ _ヒストグラム_ は、観測値（通常はリクエスト持続時間や�
   * 全ての観測値の合計を`<basename>_sum`として出力する
   * 観測されたイベント数を`<basename>_count`として出力する（上記の`<basename>_bucket{le="+Inf"}`と同じ）
 
-ヒストグラムや集約されたヒストグラムから分位数(quantile)を計算するには、[`histogram_quantile()`](/docs/prometheus/latest/querying/functions/#histogram_quantile)を利用する。 ヒストグラムは、[Apdex score](http://en.wikipedia.org/wiki/Apdex)を計算するのにも適している。 バケットを処理する際には、ヒストグラムが[累積的](https://ja.wikipedia.org/wiki/ヒストグラム#累積度数図)であることを忘れずに。 ヒストグラムの利用方法およびサマリーとの違いの詳細に関しては、ヒストグラムとサマリーを参照すること。
+ヒストグラムや集約されたヒストグラムから分位数(quantile)を計算するには、[`histogram_quantile()`](/ja/docs/prometheus/latest/querying/functions/#histogram_quantile)を利用する。 ヒストグラムは、[Apdex score](http://en.wikipedia.org/wiki/Apdex)を計算するのにも適している。 バケットを処理する際には、ヒストグラムが[累積的](https://ja.wikipedia.org/wiki/ヒストグラム#累積度数図)であることを忘れずに。 ヒストグラムの利用方法およびサマリーとの違いの詳細に関しては、ヒストグラムとサマリーを参照すること。
 
 クライアントライブラリのヒストグラムの利用方法ドキュメントは以下の通り。
 
@@ -62,7 +62,7 @@ _サマリー_ は、_ヒストグラム_ と同様に、観測値（通常は�
   * 全ての観測値の **合計** を`<basename>_sum`として出力する
   * 観測されたイベントの **数** を`<basename>_count`として出力する
 
-φ分位数やサマリーの利用方法、[ヒストグラム](#histogram)との違いの詳細な説明については、[ヒストグラムとサマリー](/docs/practices/histograms)を参照すること。
+φ分位数やサマリーの利用方法、[ヒストグラム](#histogram)との違いの詳細な説明については、[ヒストグラムとサマリー](/ja/docs/practices/histograms)を参照すること。
 
 クライアントライブラリのサマリーの利用方法ドキュメントは以下の通り。
 

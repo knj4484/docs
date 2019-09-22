@@ -6,7 +6,7 @@ sort_rank: 3
 # メトリクスのプッシュ
 
 スクレイプできないコンポーネントを監視しなければならないことがある。
-Prometheusでは、[Pushgateway](https://github.com/prometheus/pushgateway)によって、[短命のサービスレベルのバッチジョブ](/docs/practices/pushing/)からPrometheusがスクレイプ可能な中間的なジョブへと時系列をプッシュ出来るようになる。
+Prometheusでは、[Pushgateway](https://github.com/prometheus/pushgateway)によって、[短命のサービスレベルのバッチジョブ](/ja/docs/practices/pushing/)からPrometheusがスクレイプ可能な中間的なジョブへと時系列をプッシュ出来るようになる。
 これとPrometheusの単純なテキストベースのフォーマットとの組み合わせによって、クライアントライブラリなしでシェルスクリプトにメトリクスを組み込むことでさえ簡単になっている。
 
 * Pushgatewayの使い方とUnixシェルからの使い方に関するさらなる情報は、プロジェクトの[README.md](https://github.com/prometheus/pushgateway/blob/master/README.md)を参照

@@ -7,7 +7,7 @@ sort_rank: 2
 
 このドキュメントは、簡単なユースケースは簡単にし、ユーザーを間違った方向へ導いてしまう機能を回避できるようなライブラリ間の一貫性を目的として、Prometheusクライアントライブラリがどのような機能とAPIを提供すべきかについて説明する。
 
-これを書いている時点で、[10言語](/docs/instrumenting/clientlibs)でサポートされており、クライアントをどう書くかについてよく分かっている。
+これを書いている時点で、[10言語](/ja/docs/instrumenting/clientlibs)でサポートされており、クライアントをどう書くかについてよく分かっている。
 このガイドラインは、新しいクライアントライブラリの作者が良いライブラリを開発する助けになることを目的としている。
 
 ## 慣例
@@ -65,7 +65,7 @@ Cのように、オブジェクト指向でない言語では、現実的な範�
 
 ## メトリクス
 
-カウンター、ゲージ、サマリー、ヒストグラムの[メトリック型](/docs/concepts/metric_types/)が、ユーザーが使う主要なインターフェースである。
+カウンター、ゲージ、サマリー、ヒストグラムの[メトリック型](/ja/docs/concepts/metric_types/)が、ユーザーが使う主要なインターフェースである。
 
 カウンターとゲージは、クライアントライブラリに含まれていなければならない（MUST）。
 少なくともサマリーかヒストグラムのどちらかが提供されていなければならない（MUST）。
@@ -101,7 +101,7 @@ class YourClass {
 
 ### カウンター
 
-[カウンター](/docs/concepts/metric_types/#counter)は、単調増加するカウンターである。
+[カウンター](/ja/docs/concepts/metric_types/#counter)は、単調増加するカウンターである。
 カウンターは、値を減少させてはならない（MUST NOT）が、サーバーの再起動などで、0にリセットしてもよい（MAY）。
 
 カウンターは以下のメソッドを持たなければならない（MUST）。
@@ -118,7 +118,7 @@ class YourClass {
 
 ### ゲージ
 
-[ゲージ](/docs/concepts/metric_types/#gauge)は、増加/減少する値を表す。
+[ゲージ](/ja/docs/concepts/metric_types/#gauge)は、増加/減少する値を表す。
 
 ゲージは以下のメソッドを持たなければならない（MUST）。
 
@@ -147,7 +147,7 @@ class YourClass {
 
 ### サマリー
 
-[サマリー](/docs/concepts/metric_types/#summary)は、時間のスライディングウインドウに渡る（普通はリクエスト時間のような）観測値を採取し、ある特定の瞬間のその分布、頻度、合計に関する情報を提供する。
+[サマリー](/ja/docs/concepts/metric_types/#summary)は、時間のスライディングウインドウに渡る（普通はリクエスト時間のような）観測値を採取し、ある特定の瞬間のその分布、頻度、合計に関する情報を提供する。
 
 サマリーは、内部的にサマリーの分位数に割り当てられるので、"quantile"をユーザーにラベル名としてセットさせてはならない（MUST NOT）。
 サマリーは、（集約ができず、遅いが）分位数を出力するのが望ましい（ENCOURAGED）。
@@ -170,7 +170,7 @@ Javaでは、これは`startTimer`/`observeDuration`である。
 
 ### ヒストグラム
 
-[ヒストグラム](/docs/concepts/metric_types/#histogram)は、リクエストのレイテンシーのようなイベントの分布が集約可能になる。
+[ヒストグラム](/ja/docs/concepts/metric_types/#histogram)は、リクエストのレイテンシーのようなイベントの分布が集約可能になる。
 ヒストグラムは、本質的には、バケットごとのカウンターである。
 
 ヒストグラムは、内部的にバケットに`le`が割り当てられるので、`le`をユーザーにセットされるラベルとして許可してはならない（MUST NOT）。
@@ -203,7 +203,7 @@ Pythonでは、これは`time()`decorator/context managerである。
 
 ### ラベル
 
-ラベルは、Prometheusの[最も強力な機能](/docs/practices/instrumentation/#use-labels)の1つであるが、[簡単に使い過ぎになる](/docs/practices/instrumentation/#do-not-overuse-labels)。
+ラベルは、Prometheusの[最も強力な機能](/ja/docs/practices/instrumentation/#use-labels)の1つであるが、[簡単に使い過ぎになる](/ja/docs/practices/instrumentation/#do-not-overuse-labels)。
 従って、クライアントライブラリは、ラベルがどのようにユーザーに提供されるかについてかなり気をつけなければならない。
 
 クライアントライブラリは、いかなる状況でも、ゲージ/カウンター/サマリー/ヒストグラムや他のいかなるCollectorに対しても、ユーザーに同じメトリックに異なるラベルを持たせることがあってはならない（MUST NOT）。
@@ -216,7 +216,7 @@ Pythonでは、これは`time()`decorator/context managerである。
 
 クライアントライブラリは、ゲージ/カウンター/サマリー/ヒストグラム作成時点でラベル名のリストをオプションで指定できるようにしなければならない（MUST）。
 クライアントライブラリは、任意の数のラベル名をサポートする必要がある（SHOULD）。
-クライアントライブラリは、ラベル名が[ドキュメントに書かれている要件](/docs/concepts/data_model/#metric-names-and-labels)に合っているか検証しなければならない（MUST）。
+クライアントライブラリは、ラベル名が[ドキュメントに書かれている要件](/ja/docs/concepts/data_model/#metric-names-and-labels)に合っているか検証しなければならない（MUST）。
 
 あるメトリックのラベル付けされた要素にアクセスする一般的な方法は、ラベル値のリストまたはラベル名からラベル値へのマップのどちらかをとり、"Child"を返す`labels()`メソッドである。
 その後、`.inc()`/`.dec()`/`.observe()`などのメソッドは、そのChildに対して呼び出すことができる。
@@ -234,11 +234,11 @@ invalidate caching of Children.
 これらのメソッドはChildrenのキャッシュを無効にする。
 
 与えられたChildをデフォルト値で初期化する方法（普通は`labels()`を呼び出すだけ）がある必要がある（SHOULD）。
-[メトリクスの欠落の問題](/docs/practices/instrumentation/#avoid-missing-metrics)を回避するために、ラベルのないメトリクスは常に初期化されなければならない。
+[メトリクスの欠落の問題](/ja/docs/practices/instrumentation/#avoid-missing-metrics)を回避するために、ラベルのないメトリクスは常に初期化されなければならない。
 
 ### メトリック名
 
-メトリック名は、[仕様](/docs/concepts/data_model/#metric-names-and-labels)に従わなければならない。
+メトリック名は、[仕様](/ja/docs/concepts/data_model/#metric-names-and-labels)に従わなければならない。
 ラベル名と同様に、ゲージ/カウンター/サマリー/ヒストグラムの使い方およびそのライブラリで提供されている他のCollectorに合っていなければならない（MUST）。
 
 多くのクライアントライブラリが3つの部分からなる名前`namespace_subsystem_name`を設定する方法を提供している。
@@ -259,11 +259,11 @@ invalidate caching of Children.
 
 ## 出力
 
-クライアントは、[出力フォーマット](/docs/instrumenting/exposition_formats)のドキュメントに書かれているテキストベースの出力フォーマットを実装しなければならない（MUST）。
+クライアントは、[出力フォーマット](/ja/docs/instrumenting/exposition_formats)のドキュメントに書かれているテキストベースの出力フォーマットを実装しなければならない（MUST）。
 
 多大なコストを必要とせず実装できるなら、（特に人間にとって可読性の高いフォーマットにするために）出力されるメトリクスを再現性のある順番にすることが望ましい（ENCOURAGED）。
 
-## Standard and runtime collectors
+## 標準的なランタイムのcollector
 
 クライアントライブラリは、後述の標準的なライブラリが出力しているもののうち可能なものは提供する必要がある（SHOULD）。
 
@@ -298,7 +298,7 @@ invalidate caching of Children.
 クライアントライブラリは、ユーザーが自分のメトリクス組み込みコードを単体テストするのが簡単になる方法を提供することが望ましい（ENCOURAGED）。
 例えば、Pythonでは、`CollectorRegistry.get_sample_value`がある。
 
-## Packaging and dependencies
+## パッケージと依存
 
 理想を言えば、クライアントライブラリは、どんなアプリケーションにも、アプリケーションを壊すことなく、メトリクスを追加するためにインクルードできる。
 

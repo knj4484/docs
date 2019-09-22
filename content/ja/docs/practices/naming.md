@@ -11,7 +11,7 @@ sort_rank: 1
 
 メトリック名は、
 
-* 正当な文字に関して[データモデル](/docs/concepts/data_model/#metric-names-and-labels)に従わなければならない
+* 正当な文字に関して[データモデル](/ja/docs/concepts/data_model/#metric-names-and-labels)に従わなければならない
 * そのメトリックが属しているドメインに関する一単語のアプリケーションprefixを付けるべきである。このprefixは、クライアントライブラリでは、名前空間（namespace）と呼ばれることがある。あるアプリケーションの特有のメトリックでは、アプリケーション名自体が普通はprefixとなる。クライアントライブラリからexportされている標準化されたメトリックのように一般的なものもある。例えば、
   * <code><b>prometheus</b>\_notifications\_total</code>
     (Prometheusサーバーに特有のもの)

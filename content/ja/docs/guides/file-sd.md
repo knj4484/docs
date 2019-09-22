@@ -4,8 +4,8 @@ title: 監視対象検出のためのファイルベースサービスディス�
 
 # 監視対象検出のためのファイルベースサービスディスカバリーの利用
 
-Prometheusは、監視対象を検出するための[様々なサービスディスカバリーの選択肢](https://github.com/prometheus/prometheus/tree/master/discovery)（[Kubernetes](/docs/prometheus/latest/configuration/configuration/#<kubernetes_sd_config>)や[Consul](/docs/prometheus/latest/configuration/configuration/#<consul_sd_config>)、その他）を提供している。
-現在サポートされていないサービスディスカバリーを利用する必要がある場合には、Prometheusの[ファイルベースのサービスディスカバリー](/docs/prometheus/latest/configuration/configuration/#<file_sd_config>)が最も役立つであろう。
+Prometheusは、監視対象を検出するための[様々なサービスディスカバリーの選択肢](https://github.com/prometheus/prometheus/tree/master/discovery)（[Kubernetes](/ja/docs/prometheus/latest/configuration/configuration/#<kubernetes_sd_config>)や[Consul](/ja/docs/prometheus/latest/configuration/configuration/#<consul_sd_config>)、その他）を提供している。
+現在サポートされていないサービスディスカバリーを利用する必要がある場合には、Prometheusの[ファイルベースのサービスディスカバリー](/ja/docs/prometheus/latest/configuration/configuration/#<file_sd_config>)が最も役立つであろう。
 ファイルベースのサービスディスカバリーによって、JSONファイルで監視対象をメタデータと共にリストすることが可能になる。
 
 このガイドでは、
@@ -89,7 +89,7 @@ level=info ts=2018-08-13T20:39:24.905651509Z caller=main.go:500 msg="Server is r
 
 ## 検出されたサービスのメトリクス調査
 
-稼働中のPrometheusによって、`node`サービスで出力されたメトリクスを[expressionブラウザ](/docs/visualization/browser)を使って調査することが出来る。
+稼働中のPrometheusによって、`node`サービスで出力されたメトリクスを[expressionブラウザ](/ja/docs/visualization/browser)を使って調査することが出来る。
 例えば、[`up{job="node"}`](http://localhost:9090/graph?g0.range_input=1h&g0.expr=up%7Bjob%3D%22node%22%7D&g0.tab=1)というメトリックを調査すると、Node Exporterが適切に検出されていることが分かる。
 
 ## 監視対象リストの動的な変更

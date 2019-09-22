@@ -12,17 +12,17 @@ sort_rank: 1
 現在は独立したオープンソースプロジェクトであり、いかなる企業からも独立して保守されている。
 このことを強調するため、またプロジェクトのガバナンス構造を明確にするために、Prometheusは、[Cloud Native Computing Foundation](https://cncf.io/)に2016年に、[Kubernetes](http://kubernetes.io/)に次ぐ2番目のプロジェクトとして参加した。
 
-さらに詳しいPrometheusの概要は、[メディア](/docs/introduction/media/)からリンクされているリソースを参照すること。
+さらに詳しいPrometheusの概要は、[メディア](/ja/docs/introduction/media/)からリンクされているリソースを参照すること。
 
 ### 機能
 
 Prometheusの主な機能は、
 
-* メトリック名とキーバリューで特定される時系列データによる多次元[データモデル](/docs/concepts/data_model/)
-* PromQL 上記の多次元データから最大限の価値を引き出す[柔軟なクエリ言語](/docs/prometheus/latest/querying/basics/)
+* メトリック名とキーバリューで特定される時系列データによる多次元[データモデル](/ja/docs/concepts/data_model/)
+* PromQL 上記の多次元データから最大限の価値を引き出す[柔軟なクエリ言語](/ja/docs/prometheus/latest/querying/basics/)
 * 分散ストレージに依存していないこと。単一のサーバーノードが自律している
 * HTTPを通したpullモデルによる時系列データの収集
-* 中間ゲートウェイによる[時系列データpush](/docs/instrumenting/pushing/)のサポート
+* 中間ゲートウェイによる[時系列データpush](/ja/docs/instrumenting/pushing/)のサポート
 * サービスディスカバリーと静的な設定による監視対象の検出
 * 複数の方式でのグラフ化とダッシュボードのサポート
 
@@ -31,9 +31,9 @@ Prometheusの主な機能は、
 Prometheusのエコシステムは、複数のコンポーネントからなり、その多くは必須ではない
 
 * 中心となる[Prometheusサーバー](https://github.com/prometheus/prometheus)、時系列データを取得・保存する
-* アプリケーションコードをinstrumentするための[クライアントライブラリ](/docs/instrumenting/clientlibs/)
+* アプリケーションコードをinstrumentするための[クライアントライブラリ](/ja/docs/instrumenting/clientlibs/)
 * 短命のジョブをサポートするための[Pushgateway](https://github.com/prometheus/pushgateway)
-* HAProxyやStatsD、Graphiteなどのサービスのための特殊用途の[exporter](/docs/instrumenting/exporters/)
+* HAProxyやStatsD、Graphiteなどのサービスのための特殊用途の[exporter](/ja/docs/instrumenting/exporters/)
 * アラートを処理する[alertmanager](https://github.com/prometheus/alertmanager)
 * 各種サポートツール
 

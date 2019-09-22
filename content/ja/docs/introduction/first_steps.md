@@ -81,7 +81,7 @@ Prometheusは、ターゲットのパス`/metrics`でメトリクスが取得可
 
 ここで返される時系列データは、Prometheusサーバーの状態とパフォーマンスの詳細が含まれる。
 
-設定項目の完全な仕様については、[設定のドキュメント](/docs/operating/configuration)を参照すること。
+設定項目の完全な仕様については、[設定のドキュメント](/ja/docs/operating/configuration)を参照すること。
 
 ## Prometheusの起動
 
@@ -124,7 +124,7 @@ promhttp_metric_handler_requests_total{code="200"}
 count(promhttp_metric_handler_requests_total)
 ```
 
-クエリ言語についてさらに知りたい場合は、[クエリ言語のドキュメント](/docs/querying/basics/)を参照すること。
+クエリ言語についてさらに知りたい場合は、[クエリ言語のドキュメント](/ja/docs/querying/basics/)を参照すること。
 
 ## グラフ化インターフェースの利用
 
@@ -141,9 +141,9 @@ rate(promhttp_metric_handler_requests_total{code="200"}[1m])
 ## 他のターゲットの監視
 
 Prometheusに何ができるかもっとよく理解するためには、他のexporterについてのドキュメントを調べてみることを推奨する。
-まずは、[Node Exporterを用いたLinuxホストのメトリクス監視](/docs/guides/node-exporter)が良いだろう。
+まずは、[Node Exporterを用いたLinuxホストのメトリクス監視](/ja/docs/guides/node-exporter)が良いだろう。
 
 ## まとめ
 
 このガイドでは、Prometheusをインストールし、リソースを監視するようにPrometheusインスタンスを設定し、Prometheusのexpressionブラウザで時系列データを扱う基本を学んだ。
-Prometheusを学習し続けるには、次に何を探すべきか理解するために[概要](/docs/introduction/overview)を見てみると良い。
+Prometheusを学習し続けるには、次に何を探すべきか理解するために[概要](/ja/docs/introduction/overview)を見てみると良い。
