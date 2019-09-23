@@ -13,9 +13,9 @@ title: Node Exporterを用いたLinuxホストのメトリクス監視
 
 NOTE: Node Exporterが*nixのためにあるのに対して、Windowsに対して[WMI exporter](https://github.com/martinlindhe/wmi_exporter)が同じような目的で使われる
 
-## Node Exporterのインストールと実行
+## <span class="original-header">Installing and running the </span>Node Exporterのインストールと実行
 
-Node Exporterは、[tarballからインストール](#tarball-installation)できる単一のスタティックなバイナリである。
+Node Exporterは、tarballからインストールできる単一のスタティックなバイナリである。
 Prometheusの[ダウンロードページ](/download#node_exporter)からtarballをダウンロード、展開し、実行する。
 
 ```bash
@@ -62,7 +62,7 @@ go_gc_duration_seconds{quantile="0.5"} 5.846e-05
 curl http://localhost:9100/metrics | grep "node_"
 ```
 
-## Prometheusの設定
+## <span class="original-header">Configuring your </span>Prometheus<span class="original-header"> instances</span>の設定
 
 Node Exporterのメトリクスにアクセスするために、ローカルで実行しているPrometheusインスタンスが適切に設定されている必要がある。
 設定ファイル`prometheus.yml`にある以下の[`scrape_config`](../prometheus/latest/configuration/configuration/#<scrape_config>)は、`localhost:9100`を通してNode Exporterからメトリクスを取得するように指定している。

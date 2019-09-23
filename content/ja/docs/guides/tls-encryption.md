@@ -11,7 +11,7 @@ Prometheusは、expressionブラウザと[HTTP API](../../prometheus/latest/quer
 
 NOTE: Prometheusインスタンス*への*TLS接続はサポートされていないが、Prometheus*から*[監視対象](../prometheus/latest/configuration/configuration/#<tls_config>)への接続ではTLSがサポートされている。
 
-## nginxの例
+## nginx<span class="original-header"> example</span>の例
 
 ドメイン`example.com`でアクセス可能な[nginx](https://www.nginx.com/)サーバーの後ろでPrometheusインスタンスを運用し、全てのPrometheusのエンドポイントが`/prometheus`を通して利用可能にしたいとする。
 つまり、Prometheusのエンドポイント`/metrics`に対する完全なURLは、以下のようになるだろう。

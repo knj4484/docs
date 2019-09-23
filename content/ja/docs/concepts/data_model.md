@@ -8,7 +8,7 @@ sort_rank: 1
 Prometheusは、根本的に、全てのデータを[_時系列_](https://ja.wikipedia.org/wiki/時系列)（同じメトリックで同じ値を持つラベルの集合に属する一連のタイムスタンプ付きの値）として保存する。
 Prometheusは、クエリの結果として、一時的に派生した時系列を生成することもある。
 
-## メトリック名とラベル
+## <span class="original-header">Metric names and labels</span>メトリック名とラベル
 
 各時系列は、_メトリック名_と_キー・バリューの組み合わせ_（_ラベル_とも言う）の集合により、ユニークに特定される。
 

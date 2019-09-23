@@ -9,7 +9,7 @@ sort_rank: 5
 
 機能が重なっていたり、開発中のものもあるので、全てのインテグレーションがここに記載されているわけではない。 [exporterデフォルトポート](https://github.com/prometheus/prometheus/wiki/Default-port-allocations)Wikiもこの種のexporter以外のインテグレーションのいくつかを含んでいる。
 
-## ファイルサービスディスカバリー
+## <span class="original-header">File Service Discovery</span>ファイルサービスディスカバリー
 
 Prometheusがサポートしていないサービスディスカバリーの仕組みに対しては、[ファイルベースのサービスディスカバリー](/ja/docs/operating/configuration/#%3Cfile_sd_config%3E)が連携のインターフェースを提供している。
 
