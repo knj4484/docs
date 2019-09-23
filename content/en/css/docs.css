@@ -63,8 +63,8 @@ body {
   overflow-y: auto;
   position: absolute;
   top: 100%;
-  /* right: -15px; */
-  background-color: #fff;
+  width: 100%;
+  background-color: #101010;
   padding: 10px 0;
   border: 1px solid #ddd;
   border-bottom-color: #ccc;
@@ -75,6 +75,7 @@ body {
 
 .nav-dropdown a {
   padding: 0 24px 0 20px;
+  color: #9d9d9d;
 }
 
 .jumbotron h1 {
@@ -474,4 +475,8 @@ aside {
 
 article {
   margin: 10px 0 60px 0;
+}
+
+.original-header {
+  display: none;
 }
