@@ -76,6 +76,7 @@ body {
 .nav-dropdown a {
   padding: 0 24px 0 20px;
   color: #9d9d9d;
+  text-decoration: none;
 }
 
 .jumbotron h1 {
