@@ -11,7 +11,7 @@ cAdvisorは、初期状態で、Prometheusのメトリクスを出力する。
 * Prometheus、cAdvisor、[Redis](https://redis.io/)サーバーのそれぞれのコンテナを含む一つの[Docker Compose](https://docs.docker.com/compose/)の設定を作成する
 * Redisコンテナが生成、cAdvisorが収集、Prometheusがscrapeするいくつかのコンテナメトリクスを調査する
 
-## Prometheus<span class="original-header"> configuration</span>の設定
+## Prometheus<span class="anchor-text-supplement"> configuration</span>の設定
 
 まず、cAdvisorからメトリクスをscrapeするように[Prometheusを設定する](/ja/docs/prometheus/latest/configuration/configuration)必要がある。`prometheus.yml`ファイルを作成し、この設定のようにする。
 

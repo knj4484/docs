@@ -13,12 +13,12 @@ NOTE: 古いバージョンのPrometheusには、現在のテキストベース�
 バージョン2.0からは、PrometheusはProtobufベースのフォーマットをサポートしない。
 この変更の背後にある理由については、[このドキュメント](https://github.com/RichiH/OpenMetrics/blob/master/markdown/protobuf_vs_text.md)で読むことができる。
 
-## <span class="original-header">Text-based format</span>テキストベースのフォーマット
+## <span class="anchor-text-supplement">Text-based format</span>テキストベースのフォーマット
 
 Prometheusバージョン2.0から、Prometheusにメトリクスを出力する全てのプロセスは、テキストベースのフォーマットを利用しなければならない。
 ここでは、[テキストフォーマット詳細](#text-format-details)に加えて、このフォーマットの[基本情報](#basic-info)を示す。
 
-### <span class="original-header">Basic info</span>基本情報
+### <span class="anchor-text-supplement">Basic info</span>基本情報
 
 | 項目 | 説明 |
 |--------|-------------|
@@ -32,7 +32,7 @@ Prometheusバージョン2.0から、Prometheusにメトリクスを出力する
 | **制約** | <ul><li>冗長</li><li>型とdocstringが構文の必須要素ではない。したがって、メトリックの契約の検証が少ししか（あるいは全く）ない</li><li>パースのコスト</li></ul>|
 | **サポートしているメトリック型** | <ul><li>Counter</li><li>Gauge</li><li>Histogram</li><li>Summary</li><li>Untyped</li></ul> |
 
-### <span class="original-header">Text format details</span>テキストフォーマット詳細
+### <span class="anchor-text-supplement">Text format details</span>テキストフォーマット詳細
 
 Prometheusのテキストベースフォーマットは、行指向である。
 行は、line feed文字（`\n`）で分割される。

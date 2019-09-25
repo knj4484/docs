@@ -7,7 +7,7 @@ sort_rank: 2
 
 Prometheusクライアントライブラリは、4つのメトリック型を提供している。 これらは、現在は、クライアントライブラリの中で（それらの特定の型の利用方法に応じたAPIを可能にするため）、および通信プロトコルの中でのみ区別されている。 Prometheusサーバーは、型情報をまだ利用しておらず、全てのデータを型なしの時系列データに押しつぶしている。 これは、将来的には変更されるかもしれない。
 
-## <span class="original-header">Counter</span>カウンター
+## <span class="anchor-text-supplement">Counter</span>カウンター
 
 _カウンター_ は、累積的なメトリクスであり、単一の[単調増加するカウンター](https://en.wikipedia.org/wiki/単調写像)であり、その値は増加させるか起動時にゼロにリセットすることしかできない。 例えば、カウンターは、応答したリクエスト数、完了したタスクの数、エラーの数などに利用できる。
 
@@ -20,7 +20,7 @@ _カウンター_ は、累積的なメトリクスであり、単一の[単調�
    * [Python](https://github.com/prometheus/client_python#counter)
    * [Ruby](https://github.com/prometheus/client_ruby#counter)
 
-## <span class="original-header">Gauge</span>ゲージ
+## <span class="anchor-text-supplement">Gauge</span>ゲージ
 
 _ゲージ_ は、自由に増加したり減少しうる単一の数値を表すメトリックである。
 
@@ -33,7 +33,7 @@ _ゲージ`_ は、典型的には温度やメモリ使用量のような計測�
    * [Python](https://github.com/prometheus/client_python#gauge)
    * [Ruby](https://github.com/prometheus/client_ruby#gauge)
 
-## <span class="original-header">Histogram</span>ヒストグラム
+## <span class="anchor-text-supplement">Histogram</span>ヒストグラム
 
 _ヒストグラム_ は、観測値（通常はリクエスト持続時間やレスポンスサイズのようなもの）のサンプリングをし、設定可能なバケット毎にカウントする。 全ての観測値の合計も提供する。
 
@@ -52,7 +52,7 @@ _ヒストグラム_ は、観測値（通常はリクエスト持続時間や�
    * [Python](https://github.com/prometheus/client_python#histogram)
    * [Ruby](https://github.com/prometheus/client_ruby#histogram)
 
-## <span class="original-header">Summary</span>サマリー
+## <span class="anchor-text-supplement">Summary</span>サマリー
 
 _サマリー_ は、_ヒストグラム_ と同様に、観測値（通常はリクエスト持続時間やレスポンスサイズのようなもの）のサンプリングをする。観測の全カウントおよび観測値の合計を提供すると同時に、設定可能な分位数を計算する。
 

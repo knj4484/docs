@@ -25,7 +25,7 @@ OpenMetricsワーキンググループは、メトリックの出力に関して
 backfillは、過去データをまとめて読み込めるようにする。
 これで、過去に遡ってルールを評価したり、他のシステムから古いデータを転送することができるようになる。
 
-### <span class="original-header">TLS and authentication in HTTP serving endpoints</span>HTTPエンドポイントでのTLSと認証
+### <span class="anchor-text-supplement">TLS and authentication in HTTP serving endpoints</span>HTTPエンドポイントでのTLSと認証
 
 Prometheus、Alertmanager、公式exporterのHTTPエンドポイントには、TLSと認証の組み込みでのサポートがまだない。
 これをサポートすることで、外からこの機能を付け足すためのリバースプロキシが必要なくなり、ユーザーがPrometheusのコンポーネントをデプロイすることが簡単になる。
