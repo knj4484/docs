@@ -4,7 +4,7 @@ def find_translations(item, items)
   language_code = language_code(item)
   canonic_path = canonical_path(item)
   translation_items = items.find_all {|i| language_code(i) != language_code and canonical_path(i) == canonic_path }
-  translations = translation_items.map {|i| { :path => i.identifier.to_s, :language_code => language_code(i) } }
+  translation_items.map {|i| { :path => i.identifier.to_s, :language_code => language_code(i) } }
 end
 
 def langulage_path_prefix(item)
@@ -19,4 +19,24 @@ end
 def canonical_path(item)
   prefix = langulage_path_prefix(item)
   item.identifier.to_s[prefix.length..-1]
+end
+
+def find_altanates(item, items)
+  altanates = [
+    {
+      :hreflang => language_code(item),
+      :path => item.path
+    },
+    {
+      :hreflang => 'x-default',
+      :path => canonical_path(item)
+    }
+  ]
+  translations = find_translations(item, items).map do |t|
+    {
+      :hreflang => t[:language_code],
+      :path => t[:path]
+    }
+  end
+  altanates.concat(translations)
 end
