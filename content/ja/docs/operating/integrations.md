@@ -3,20 +3,20 @@ title: インテグレーション
 sort_rank: 5
 ---
 
-# インテグレーション
+# <span class="original-header">Integrations</span>インテグレーション
 
 [クライアントライブラリ](/ja/docs/instrumenting/clientlibs/)、[エクスポーターおよび関連ライブラリ](/ja/docs/instrumenting/exporters/)に加えて、Prometheusには一般的な連携ポイントが多くある。 このページでは、それらとのインテグレーションのうちいくつかを記載する。
 
 機能が重なっていたり、開発中のものもあるので、全てのインテグレーションがここに記載されているわけではない。 [exporterデフォルトポート](https://github.com/prometheus/prometheus/wiki/Default-port-allocations)Wikiもこの種のexporter以外のインテグレーションのいくつかを含んでいる。
 
-## <span class="anchor-text-supplement">File Service Discovery</span>ファイルサービスディスカバリー
+## <span class="original-header">File Service Discovery</span><span class="anchor-text-supplement">File Service Discovery</span>ファイルサービスディスカバリー
 
 Prometheusがサポートしていないサービスディスカバリーの仕組みに対しては、[ファイルベースのサービスディスカバリー](/ja/docs/operating/configuration/#%3Cfile_sd_config%3E)が連携のインターフェースを提供している。
 
  * [Docker Swarm](https://github.com/ContainerSolutions/prometheus-swarm-discovery)
  * [Scaleway](https://github.com/scaleway/prometheus-scw-sd)
 
-## Remote Endpoints and Storage
+## <span class="original-header">Remote Endpoints and Storage</span>リモートエンドポイントとストレージ
 
 Prometheusの[remote write](/ja/docs/operating/configuration/#%3Cremote_write%3E)と[remote read](/ja/docs/operating/configuration/#%3Cremote_read%3E)の機能によって、値を透過的に送信・受信することができる。 これは、長期ストレージを主な目的としている。 ここに挙げられたソリューションが自分のデータ量を捌けるかを慎重に評価することをお勧めする。
 
@@ -54,14 +54,14 @@ Alertmanagerがサポートしていない通知の仕組みに対しては、[w
   * [Telegram bot](https://github.com/inCaller/prometheus_bot)
   * [XMPP Bot](https://github.com/jelmer/prometheus-xmpp-alerts)
 
-## 設定管理
+## <span class="original-header">Management</span>設定管理
 
 Prometheusには、既存システムと連携できるようにしたり、既存システムの上に構築したりするための設定管理機能はない。
 
   * [Prometheus Operator](https://github.com/coreos/prometheus-operator): Kubernetes上でのPrometheusの管理をする
   * [Promgen](https://github.com/line/promgen): PrometheusとAlertmanagerのためのWeb UIおよび設定ジェネレーター
 
-## その他
+## <span class="original-header">Other</span>その他
 
   * [karma](https://github.com/prymitive/karma): アラートダッシュボード
   * [PushProx](https://github.com/RobustPerception/PushProx): NATや類似のネットワーク構成を通過するためのプロキシ

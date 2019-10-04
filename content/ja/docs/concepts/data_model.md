@@ -3,7 +3,7 @@ title: データモデル
 sort_rank: 1
 ---
 
-# データモデル
+# <span class="original-header">Data model</span>データモデル
 
 Prometheusは、根本的に、全てのデータを[_時系列_](https://ja.wikipedia.org/wiki/時系列)（同じメトリックで同じ値を持つラベルの集合に属する一連のタイムスタンプ付きの値）として保存する。
 Prometheusは、クエリの結果として、一時的に派生した時系列を生成することもある。
@@ -32,7 +32,7 @@ Prometheusは、クエリの結果として、一時的に派生した時系列�
 
 [メトリック名とラベル名ベストプラクティス](/ja/docs/practices/naming/)も参照すること。
 
-## サンプル
+## <span class="original-header">Samples</span>サンプル
 
 サンプルが実際の時系列データを構成する。
 各サンプルは以下のデータから成る。
@@ -40,7 +40,7 @@ Prometheusは、クエリの結果として、一時的に派生した時系列�
    * float64の値
    * ミリ秒精度のタイムスタンプ
 
-## 記法
+## <span class="original-header">Notation</span>記法
 
 メトリック名とラベルの集合に対して、時系列は、よく、この記法を用いて指定される。
 

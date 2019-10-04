@@ -3,12 +3,12 @@ title: exporterとインテグレーション
 sort_rank: 4
 ---
 
-# exporterとインテグレーション
+# exporter<span class="original-header">s and integrations</span>とインテグレーション
 
 サードパーティーのシステムから既存のメトリクスをPrometheusのメトリクスとしてexportするのに役立つたくさんのライブラリやサーバーがある。
 これは、あるシステムがPrometheusメトリクスを直接はinstrument出来ないケース(例えば、HAProxyやLinuxのシステム情報)で有益である。
 
-## サードパーティのexporter
+## <span class="original-header">Third-party </span>サードパーティのexporter<span class="original-header">s</span>
 
 いくつかのexporterは、GitHubの[公式Prometheus organization](https://github.com/prometheus)の一部として保守されている。
 それらは*official*と印してあり、他は外部で保守されている。
@@ -20,7 +20,7 @@ wikiページ[exporterのデフォルトポート](https://github.com/prometheus
 
 [JMX exporter](https://github.com/prometheus/jmx_exporter)は、JVMベースの幅広いアプリケーション（例えば、[Kafka](https://kafka.apache.org/)や[Cassandra](https://cassandra.apache.org/)）からexportすることが出来る。
 
-### データベース
+### <span class="original-header">Databases</span>データベース
    * [Aerospike exporter](https://github.com/alicebob/asprom)
    * [ClickHouse exporter](https://github.com/f1yegor/clickhouse_exporter)
    * [Consul exporter](https://github.com/prometheus/consul_exporter) (**official**)
@@ -44,7 +44,7 @@ wikiページ[exporterのデフォルトポート](https://github.com/prometheus
    * [Tarantool metric library](https://github.com/tarantool/prometheus)
    * [Twemproxy](https://github.com/stuartnelson3/twemproxy_exporter)
 
-### ハードウェア関連
+### <span class="original-header">Hardware related</span>ハードウェア関連
    * [apcupsd exporter](https://github.com/mdlayher/apcupsd_exporter)
    * [Collins exporter](https://github.com/soundcloud/collins_exporter)
    * [IBM Z HMC exporter](https://github.com/zhmcclient/zhmc-prometheus-exporter)
@@ -58,7 +58,7 @@ wikiページ[exporterのデフォルトポート](https://github.com/prometheus
    * [ProSAFE exporter](https://github.com/dalance/prosafe_exporter)
    * [Ubiquiti UniFi exporter](https://github.com/mdlayher/unifi_exporter)
 
-### メッセージングシステム
+### <span class="original-header">Messaging systems</span>メッセージングシステム
    * [Beanstalkd exporter](https://github.com/messagebird/beanstalkd_exporter)
    * [EMQ exporter](https://github.com/nuvo/emq_exporter)
    * [Gearman exporter](https://github.com/bakins/gearman-exporter)
@@ -70,7 +70,7 @@ wikiページ[exporterのデフォルトポート](https://github.com/prometheus
    * [RabbitMQ exporter](https://github.com/kbudde/rabbitmq_exporter)
    * [RabbitMQ Management Plugin exporter](https://github.com/deadtrickster/prometheus_rabbitmq_exporter)
 
-### ストレージ
+### <span class="original-header">Storage</span>ストレージ
    * [Ceph exporter](https://github.com/digitalocean/ceph_exporter)
    * [Ceph RADOSGW exporter](https://github.com/blemmenes/radosgw_usage_exporter)
    * [Gluster exporter](https://github.com/ofesseler/gluster_exporter)
@@ -105,12 +105,12 @@ wikiページ[exporterのデフォルトポート](https://github.com/prometheus
    * [Rancher exporter](https://github.com/infinityworksltd/prometheus-rancher-exporter)
    * [Speedtest exporter](https://github.com/nlamirault/speedtest_exporter)
 
-### ログ
+### <span class="original-header">Logging</span>ログ
    * [Fluentd exporter](https://github.com/V3ckt0r/fluentd_exporter)
    * [Google's mtail log data extractor](https://github.com/google/mtail)
    * [Grok exporter](https://github.com/fstab/grok_exporter)
 
-### 他の監視システム
+### <span class="original-header">Other monitoring systems</span>他の監視システム
    * [Akamai Cloudmonitor exporter](https://github.com/ExpressenAB/cloudmonitor_exporter)
    * [Alibaba Cloudmonitor exporter](https://github.com/aylei/aliyun-exporter)
    * [AWS CloudWatch exporter](https://github.com/prometheus/cloudwatch_exporter) (**official**)
@@ -135,7 +135,7 @@ wikiページ[exporterのデフォルトポート](https://github.com/prometheus
    * [SNMP exporter](https://github.com/prometheus/snmp_exporter) (**official**)
    * [StatsD exporter](https://github.com/prometheus/statsd_exporter) (**official**)
 
-### その他
+### <span class="original-header">Miscellaneous</span>その他
    * [ACT Fibernet Exporter](https://git.captnemo.in/nemo/prometheus-act-exporter)
    * [Bamboo exporter](https://github.com/AndreyVMarkelov/bamboo-prometheus-exporter)
    * [BIG-IP exporter](https://github.com/ExpressenAB/bigip_exporter)
@@ -177,7 +177,7 @@ wikiページ[exporterのデフォルトポート](https://github.com/prometheus
 新しいexporterを開発する際には、[exporter開発ガイドライン](/ja/docs/instrumenting/writing_exporters)に従って下さい。
 [開発メーリングリスト](https://groups.google.com/forum/#!forum/prometheus-developers)に相談することも検討して下さい。どうすればあなたのexporterを可能な限り便利で安定的に出来るかアドバイスできれば幸いです。
 
-## Prometheusメトリクスを出力するソフトウェア
+## <span class="original-header">Software exposing </span>Prometheus<span class="original-header"> metrics</span>メトリクスを出力するソフトウェア
 
 サードパーティのソフトウェアにはPrometheusフォーマットでメトリクスを出力していてexporterを別に必要としないものもある。
 
@@ -215,7 +215,7 @@ wikiページ[exporterのデフォルトポート](https://github.com/prometheus
 
 *direct*と印されているソフトウェアはPrometheusクライアントライブラリで直接メトリクスが組み込まれている。
 
-## その他のサードパーティーのユーティリティ
+## <span class="original-header">Other third-party utilities</span>その他のサードパーティーのユーティリティ
 
 このセクションは、各言語のコードにメトリクスを組み込むのに役立つライブラリやユーティリティの一覧である。
 これら自体は、Prometheusクライアントライブラリではなく、内部で通常のPrometheusクライアントライブラリを利用している。

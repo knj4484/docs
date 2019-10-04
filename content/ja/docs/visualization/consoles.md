@@ -3,13 +3,13 @@ title: コンソールテンプレート
 sort_rank: 3
 ---
 
-# コンソールテンプレート
+# <span class="original-header">Console templates</span>コンソールテンプレート
 
 コンソールテンプレートによって、[Go templating language](http://golang.org/pkg/text/template/)で書かれた任意のコンソールを作成することができる。
 
 コンソールテンプレートは、簡単にバージョン管理できるテンプレートを作成する最も強力な方法である。ただ、学習コストは高いので、このスタイルの監視に慣れていないユーザーは、まず[Grafana](/ja/docs/visualization/grafana/)を試すのが良い。
 
-## 始める
+## <span class="original-header">Getting started</span>始める
 
 Prometheusには、コンソールのサンプル集がある。これらは稼働しているPrometheusの`/consoles/index.html.example`で見ることができ、
 Node Exporterが`job="node"`というラベルでスクレイプしているなら、Node Exporterのコンソールを表示する。
@@ -30,7 +30,7 @@ Node Exporterが`job="node"`というラベルでスクレイプしているな�
 
 最後に、右側の表は、グラフよりコンパクトに統計情報を表示するために利用できる。
 
-## コンソールの例
+## <span class="original-header">Example Console</span>コンソールの例
 
 これは、基本的なコンソールで、右側の表にタスクの数、いくつのタスクがupか、平均メモリ使用量を表示し、メインコンテンツとして毎秒のクエリ数のグラフを表示する。
 
@@ -98,7 +98,7 @@ new PromConsole.Graph({
 
 カスタムのフォーマットも定義できる。サンプルは、[prom.lib](https://github.com/prometheus/prometheus/blob/master/console_libraries/prom.lib)を参照のこと。
 
-## グラフライブラリ
+## <span class="original-header">Graph Library</span>グラフライブラリ
 
 グラフライブラリは次のように呼び出す。
 

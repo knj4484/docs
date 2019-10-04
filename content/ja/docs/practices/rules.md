@@ -3,14 +3,14 @@ title: レコーディングルール
 sort_rank: 6
 ---
 
-# レコーディングルール
+# <span class="original-header">Recording rules</span>レコーディングルール
 
 [レコーディングルール](/ja/docs/prometheus/latest/configuration/recording_rules/)の一貫した命名体系によって、ルールの意味を一目で理解することが簡単になる。
 また、不正確だったり意味のない計算が目立つようになり、間違いを避けることができる。
 
 このページは、集約を正しく行うにはどうすればいいかを記し、また命名規約を提示する。
 
-## 命名と集約
+## <span class="original-header">Naming and aggregation</span>命名と集約
 
 レコーディングルールは、一般的な形式`level:metric:operations`になっているべきである。
 `level`は、集約レベルおよび出力されるラベルを表す。
@@ -35,7 +35,7 @@ operationsを綺麗に保つために、`sum()`以外の演算がある場合は
 集約後に消したいラベルを`without`で常に指定すること。
 これは、`job`などの他の全てのラベルを保持することになり、コンフリクトを回避し、より有益なメトリクスやアラートが得られる。
 
-## 例
+## <span class="original-header">Examples</span>例
 
 ラベル`path`を持つ秒間リクエストを集約する
 

@@ -3,7 +3,7 @@ title: exporterの書き方
 sort_rank: 5
 ---
 
-# exporterの書き方
+# <span class="original-header">Writing </span>exporter<span class="original-header">s</span>の書き方
 
 自分自身のコードにメトリクスを組み込む場合は、[Prometheusクライアントライブラリを用いたコードへのメトリクスの組み込み方の一般的なルール](/ja/docs/practices/instrumentation/)に従うべきである。
 他の監視システムやメトリクス組み込みシステムからメトリクスを取得する場合は、物事はそこまで白黒はっきりしていない。
@@ -13,7 +13,7 @@ sort_rank: 5
 
 もしexporterを書いていて、このページのどこかが分からなければ、IRC(#prometheus on Freenode)または[メーリングリスト](https://prometheus.io/community)で私たちに連絡して下さい。
 
-## 保守性と純粋性
+## <span class="original-header">Maintainability and purity</span>保守性と純粋性
 
 exporterを書く際に決めなければいけない主なことは、完璧なメトリクスを得るためにどれぐらいの労力をかけるつもりがあるのかということである。
 
@@ -26,7 +26,7 @@ exporterを書く際に決めなければいけない主なことは、完璧な
 例えば、`mdadm`コレクターは、ファイルを独自解析して、特にこのコレクターのために生成されたメトリクスを出力する。
 `meminfo`コレクターに対してはカーネルバージョンによって結果が異なるので、正しいメトリクスを生成するために十分な変換をすることになる。
 
-## 設定
+## <span class="original-header">Configuration</span>設定
 
 アプリケーションに取り組んでいる時には、アプリケーションがどこにあるか以上の独自設定をユーザーがする必要のないexporterを目指すべきである。
 もし粒度が細か過ぎるなら、特定のメトリクスを外せるようにしてあげなければいけないかもしれない。
@@ -48,9 +48,9 @@ Prometheusに適したメトリクスを生成するように、追加設定や�
 
 YAMLが標準のPrometheus設定フォーマットであり、全ての設定はデフォルトでYAMLを利用するべきである。
 
-##  メトリクス
+## <span class="original-header">Metrics</span>メトリクス
 
-### 命名
+### <span class="original-header">Naming</span>命名
 
 [メトリック名とラベル名ベストプラクティス](/ja/docs/practices/naming)に従うこと。
 
@@ -107,7 +107,7 @@ failedやsuccessというラベルを持つ1つのメトリックを使わない
 この理論は全てのexporterに当てはまるわけではない。例えば、MySQL exporterのメトリクスは、DB管理者だけでなく色々な人に使われるだろう。
 `HELP`文字列に元々の名前を含めておくと、元々の名前を使うのと同程度の恩恵が得られるだろう。
 
-### ラベル
+### <span class="original-header">Labels</span>ラベル
 
 ラベルに関する[一般的なアドバイス](docs/practices/instrumentation/#things-to-watch-out-for)を読むこと。
 
@@ -184,7 +184,7 @@ my_metric{label=b} 6
 したがって、これらのラベルは、利用している任意のサービスディスカバリーを経由して、Prometheusのスクレイプの設定に含まれる。
 少なくとも一部のスクレイプする人にとっては、マシンロールは有益な情報である可能性が高いので、この考え方をマシンロールにも適用して良い。
 
-### 型
+### <span class="original-header">Types</span>型
 
 自分のメトリクスをPrometheusの型に合うようにする必要がある。
 これは、通常、カウンターとゲージである。
@@ -197,7 +197,7 @@ my_metric{label=b} 6
 カウンターは減少できないので、他のメトリクスを組み込むシステムから来るカウンター型がデクリメントされ得るのであれば、それはカウンターにしてはいけない。それはゲージである。
 `GAUGE`がカウンターとして利用されるのは誤解を招くであろうから、ここで使うには`UNTYPED`がおそらく最善の型である。
 
-### ヘルプ文字列
+### <span class="original-header">Help strings</span>ヘルプ文字列
 
 メトリクスを変換している場合、元が何だったか、どんなルールがその変換で動いたのかをユーザーが辿れるようになっていると便利である。
 collectorやexporterの名前と適用されたルールのID、元のメトリックの名前をヘルプ文字列に入れておくと、かなりユーザーが助かるだろう。
@@ -209,7 +209,7 @@ Prometheusでは、1つのメトリックに異なる複数のヘルプ文字列
 [HAProxy exporter](https://github.com/prometheus/haproxy_exporter)には、手書きの文字列がある。
 [node exporter](https://github.com/prometheus/node_exporter)にも幅広い種類の例がある。
 
-### 有益でない情報の削除
+### <span class="original-header">Drop less useful statistics</span>有益でない情報の削除
 
 メトリクス組み込みの仕組みには、最小値、最大値、標準偏差に加えて、1m、5m、15mのレート、アプリケーションが起動してからの平均レート（Dropwizardでは、これらは`mean`と呼ばれる）を出力するものがある。
 。
@@ -220,7 +220,7 @@ minやmaxがどの時間にわたって計算されたのか分からないし�
 
 分位数にも同じような問題があり、それらを削除するのかサマリーに入れるのかを選ぶことができる。
 
-### ドット区切り文字列
+### <span class="original-header">Dotted strings</span>ドット区切り文字列
 
 多くの監視システムには、ラベルがない。
 その代わり、`my.class.path.mymetric.labelvalue1.labelvalue2.labelvalue3`のようなことをする。
@@ -248,7 +248,7 @@ exporter自体に直接メトリクスを組み込むのは問題がない。
 転送されたバイト合計や全てのスクレイプにまたがってexporterによって実行された呼び出し回数は、その例である。
 [blackbox exporter](https://github.com/prometheus/blackbox_exporter)や[SMNP exporter](https://github.com/prometheus/snmp_exporter)のような単一の監視対象に結びついていないexporterに対して、これらはいつも通りの`/metrics`の呼び出しでのみ出力するべきであり、特定の監視対象のスクレイプで出力すべきではない。
 
-### スクレイプ自体に関するメトリクス
+### <span class="original-header">Metrics about the scrape itself</span>スクレイプ自体に関するメトリクス
 
 スクレイプに関して、どれぐらい時間がかかったか、何個のレコードを処理したかのようなメトリクスを出力したい時がある。
 
@@ -256,7 +256,7 @@ exporter自体に直接メトリクスを組み込むのは問題がない。
 その名前は、例えば`jmx_scrape_duration_seconds`のように、exporter名をプリフィックスにするべきである。
 `_exporter`は、通常は除外され、exporterが単にcollectorとして使うのも理にかなっているなら絶対に除外される。
 
-### マシンとプロセスのメトリクス
+### <span class="original-header">Machine and process metrics</span>マシンとプロセスのメトリクス
 
 例えばElasticsearchのような多くのシステムは、CPUやメモリ、ファイルシステム情報のようなマシンのメトリクスも出力する。
 これらは、Prometheusエコシステムの中で、[node exporter](https://github.com/prometheus/node_exporter)が提供しているので、削除されるべきである。
@@ -266,7 +266,7 @@ JavaクライアントとJMX exporterは既に、[DefaultExports.java](https://g
 
 他の言語やフレームワークでも同様である。
 
-## デプロイ
+## <span class="original-header">Deployment</span>デプロイ
 
 各exporterは、出来れば同じマシン上でちょうど1つのインスタンスのアプリケーションを監視すべきである。
 つまり、運用しているHAProxyそれぞれに対して`haproxy_exporter`プロセスを実行することになる。
@@ -295,7 +295,7 @@ MySQLレプリカの集合があり、そのデータに対してビジネスク
 その場合、それぞれのインスタンスを個別に監視し、Prometheusで「マスターであること」を判断すべきである。
 これは、必ずしもちょうど1つのマスターがある訳ではないからであり、Prometheusの足元でターゲットが何であるかを変更するとおかしなことが起きる。
 
-### スケジュール
+### <span class="original-header">Scheduling</span>スケジュール
 
 メトリクスは、Prometheusがスクレイプした時にだけアプリケーションからpullされるべきである。
 exporterは、自分のタイマーに基づいてスクレイプをするべきではない。
@@ -310,7 +310,7 @@ exporterは、自分のタイマーに基づいてスクレイプをするべき
 Prometheusがスクレイプをタイムアウトさせるのは、デフォルトで10秒である。
 自分のexporterがこれを超えそうなら、ユーザードキュメントでこのことを呼びかけるべきである。
 
-### プッシュ
+### <span class="original-header">Pushes</span>プッシュ
 
 アプリケーションや監視システムの中には、例えばStatsD、Graphite、collectdのように、メトリクスをプッシュするだけのものもある。
 
@@ -332,7 +332,7 @@ StatsDは、メトリクスではなくイベントを扱うものなので、�
 インスタンスレベルのバッチメトリクスでは、明らかなパターンはまだない。
 選択肢としては、node exporterのtextfile collectorを乱用するか、メモリ内の状態に頼る（リブート後に状態を保持する必要がなければおそらく最善）か、textfile collectorに似た機能を実装するかのいずれかである。
 
-### 失敗したスクレイプ
+### <span class="original-header">Failed scrapes</span>失敗したスクレイプ
 
 通信しているアプリケーションが反応しなかったり他の問題がある場合のスクレイプの失敗するときのために、現状で2つのパターンがある。
 
@@ -345,11 +345,11 @@ StatsDは、メトリクスではなくイベントを扱うものなので、�
 後者は、`up`が通常の動作をするので多少使いやすい。
 ただし、exporterがダウンしているのかアプリケーションがダウンしているか区別することはできない。
 
-### ランディングページ
+### <span class="original-header">Landing page</span>ランディングページ
 
 `http://yourexporter/`を見ると簡単なHTMLでexporterの名前と`/metrics`ページへのリンクがあるとユーザーにとって親切である。
 
-### ポート番号
+### <span class="original-header">Port numbers</span>ポート番号
 
 ユーザーは、同じマシンにたくさんのexporterとPrometheusコンポーネントを持っているかもしれない。
 したがって、それぞれにユニークなポート番号を持たせるのが簡単であるようにすること。
@@ -362,6 +362,6 @@ exporterを開発しているときは、次のポート番号を、できれば
 これはPrometheusユーザーの暮らしを少し良くするための登録であり、特定のexporterを開発するという公約ではない。
 内部的なアプリケーションのためのexporterには、デフォルトのポート割り当て範囲外のポートを利用することを推奨する。
 
-## アナウンス
+## <span class="original-header">Announcing</span>アナウンス
 
 自分のexporterを世界にアナウンスする準備が出来たなら、メーリングリストにメールして、[利用可能なexporter一覧](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exporters.md)に追加するためにPRを送ること。

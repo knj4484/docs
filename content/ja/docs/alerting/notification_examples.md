@@ -2,11 +2,11 @@
 title: 通知テンプレートの例
 sort_rank: 8
 ---
-# 通知テンプレートの例
+# <span class="original-header">Notification Template Examples</span>通知テンプレートの例
 
 このドキュメントでは、様々なアラートの設定と対応するAlertmanagerの設定ファイル（alertmanager.yml）の例を示す。各設定で、[Go templating](http://golang.org/pkg/text/template/)を利用している。
 
-## Slackへの通知のカスタマイズ
+## <span class="original-header">Customizing Slack notifications</span>Slackへの通知のカスタマイズ
 
 この例では、送信されたアラートの対処方法が書かれた組織のWikiへのURLをSlackへの通知が送るようにカスタマイズされている。
 
@@ -25,7 +25,7 @@ receivers:
     text: 'https://internal.myorg.net/wiki/alerts/{{ .GroupLabels.app }}/{{ .GroupLabels.alertname }}'
 ```
 
-## CommonAnnotationsのアノテーションの取得
+## <span class="original-header">Accessing annotations in </span>CommonAnnotationsのアノテーションの取得
 
 この例では、Slackレシーバーに送られるテキストを、Alertmanagerが送るデータ`CommonAnnotations`に入っている`summary`と`description`を取得してカスタマイズする。
 
@@ -70,7 +70,7 @@ groups:
     text: "{{ range .Alerts }}{{ .Annotations.description }}\n{{ end }}"
 ```
 
-## 再利用可能なテンプレートの定義
+## <span class="original-header">Defining reusable templates</span>再利用可能なテンプレートの定義
 
 1つ目の例に戻ると、複数行に渡る複雑なテンプレートを避けるために、名前付きのテンプレートを含み、Alertmanagerに読み込まれるテンプレートを含むファイルを提供することが出来る。
 `/alertmanager/template/myorg.tmpl`というファイルを作り、"slack.myorg.text"という名前のテンプレートを作成する。

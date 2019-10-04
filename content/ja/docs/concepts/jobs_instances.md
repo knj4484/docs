@@ -3,7 +3,7 @@ title: ジョブとインスタンス
 sort_rank: 3
 ---
 
-# ジョブとインスタンス
+# <span class="original-header">Jobs and instances</span>ジョブとインスタンス
 
 Prometheus用語で、スクレイプすることができるエンドポイントは _インスタンス_ と呼ばれ、通常は1つのプロセスに対応している。 同じ目的のインスタンス（例えば、スケーラビリティや信頼性のために複製されたプロセス）の集合は _ジョブ_ と呼ばれる。
 
@@ -15,7 +15,7 @@ Prometheus用語で、スクレイプすることができるエンドポイン�
       * instance 3: `5.6.7.8:5670`
       * instance 4: `5.6.7.8:5671`
 
-## 自動生成されるラベルと時系列
+## <span class="original-header">Automatically generated labels and time series</span>自動生成されるラベルと時系列
 
 Prometheusが監視対象をスクレイプするとき、監視対象を識別できるように、以下のラベルを時系列に自動的に付与する。
 

@@ -3,30 +3,30 @@ title: メディア
 sort_rank: 7
 ---
 
-# メディア
+# <span class="original-header">Media</span>メディア
 
 インターネット上のPrometheus関連の全てのリソースを収集する[subreddit](https://www.reddit.com/r/prometheusmonitoring)がある。
 
 Prometheusを始めてみるのに特に有益なリソースを選んだものを以下に示す。
 
-## ブログ
+## <span class="original-header">Blogs</span>ブログ
 
 * このサイト自体に[ブログ](/blog/)がある
 * [PrometheusをアナウンスするSoundCloudのブログ記事](https://developers.soundcloud.com/blog/prometheus-monitoring-at-soundcloud)
   - このサイトのものより丁寧な概要
 * [Robust Perception blog](https://www.robustperception.io/tag/prometheus/)のPrometheus関連の記事
 
-## チュートリアル
+## <span class="original-header">Tutorials</span>チュートリアル
 
 * [Prometheusワークショップのための手順書とサンプルコード](https://github.com/juliusv/prometheus_workshop).
 * [Ubuntu 14.04上でDockerを用いてPrometheusをインストールする方法](https://www.digitalocean.com/community/tutorials/how-to-install-prometheus-using-docker-on-ubuntu-14-04).
 
-## Podcastとインタビュー
+## Podcast<span class="original-header">s and interviews</span>とインタビュー
 
 * [Prometheus on FLOSS Weekly 357](https://twit.tv/shows/floss-weekly/episodes/357) - Julius Volz on the [FLOSS Weekly TWiT.tv](https://twit.tv/shows/floss-weekly/) show.
 * [Prometheus and Service Monitoring](https://changelog.com/168/) - Julius Volz on the [Changelog](https://changelog.com/) podcast.
 
-## 発表動画
+## <span class="original-header">Recorded talks</span>発表動画
 
 * [Prometheus: A Next-Generation Monitoring System](https://www.usenix.org/conference/srecon15europe/program/presentation/rabenstein) – Julius Volz and Björn Rabenstein at SREcon15 Europe, Dublin.
 * [Prometheus: A Next-Generation Monitoring System](https://www.youtube.com/watch?v=cwRmXqXKGtk) - Brian Brazil at FOSDEM 2016 ([slides](http://www.slideshare.net/brianbrazil/prometheus-a-next-generation-monitoring-system-fosdem-2016)).
@@ -36,9 +36,9 @@ Prometheusを始めてみるのに特に有益なリソースを選んだもの�
 * In German: [Monitoring mit Prometheus](https://media.ccc.de/v/eh16-43-monitoring_mit_prometheus#video&t=2804) – Michael Stapelberg at [Easterhegg 2016](https://eh16.easterhegg.eu/).
 * In German: [Prometheus in der Praxis](https://media.ccc.de/v/MRMCD16-7754-prometheus_in_der_praxis) – Jonas Große Sundrup at [MRMCD 2016](https://2016.mrmcd.net/en/)
 
-## 発表スライド
+## <span class="original-header">Presentation slides</span>発表スライド
 
-### 一般
+### <span class="original-header">General</span>一般
 
 * [Prometheus Overview](http://www.slideshare.net/brianbrazil/prometheus-overview) – by Brian Brazil.
 * [Systems Monitoring with Prometheus](http://www.slideshare.net/brianbrazil/devops-ireland-systems-monitoring-with-prometheus) – Brian Brazil at Devops Ireland Meetup, Dublin.

@@ -13,7 +13,7 @@ nav_icon: sliders
 以下、Alertmanagerが実装しているコアとなる概念を説明する。
 これらの詳細な使い方は、[設定ドキュメント](../configuration)を参照すること。
 
-## グループ化
+## <span class="original-header">Grouping</span>グループ化
 
 グループ化は、似た性質のアラートを1つの通知に分類する。
 これは、多くのシステムが一度に失敗し、何百、何千のアラートが同時に起こる大規模障害において特に有益である。
@@ -37,7 +37,7 @@ Alertmanagerは、そのアラートが起きている場合にこのクラス�
 
 抑制は、Alertmanagerの設定ファイルを通して設定される。
 
-## サイレンス
+## <span class="original-header">Silences</span>サイレンス
 
 サイレンスは、指定された時間、単純にミュートする分かりやすい方法である。
 サイレンスは、ルーティングツリーのように、マッチャーを元に設定される。
@@ -46,12 +46,12 @@ Alertmanagerは、そのアラートが起きている場合にこのクラス�
 
 サイレンスは、AlertmanagerのWebインターフェースで設定される。
 
-## クライアントの振る舞い
+## <span class="original-header">Client behavior</span>クライアントの振る舞い
 
 Alertmanagerは、クライアントの振る舞いに対して[特別な要件](../clients)を持っている。
 それらの要件に関係があるのは、アラートを送信するのにPrometheusを使わない高度なユースケースだけである。
 
-## 高可用性
+## <span class="original-header">High Availability</span>高可用性
 
 Alertmanagerは、高可用なクラスタを構築するための設定をサポートしている。
 これは、フラグ[--cluster-*](https://github.com/prometheus/alertmanager#high-availability)を利用して設定することができる。

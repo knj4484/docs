@@ -2,7 +2,7 @@
 title: Basic認証
 ---
 
-# Basic認証でPrometheusのAPIとUIを安全にする
+# <span class="original-header">Securing </span>ベーシック認証でPrometheus<span class="original-header"> </span>のAPI<span class="original-header"> and </span>とUIを安全にする<span class="original-header"> endpoints using basic auth</span>
 
 Prometheusは、expressionブラウザとHTTP APIの接続に対して、[Basic認証](https://ja.wikipedia.org/wiki/Basic認証)を直接サポートしていない。
 それらの接続にBasic認証を要求したいなら、Prometheusをリバースプロキシと組み合わせて使い、プロキシレイヤーで認証を適用することを推奨する。
@@ -10,7 +10,7 @@ Prometheusは、expressionブラウザとHTTP APIの接続に対して、[Basic�
 
 NOTE: PrometheusインスタンスへのBasic認証での接続はサポートされていないが、Prometheus*から*[監視対象](../prometheus/latest/configuration/configuration/#<scrape_config>)への接続ではBasic認証がサポートされている。
 
-## nginxの例
+## nginxの例<span class="original-header"> example</span>
 
 `localhost:12321`で稼働しているnginxサーバーの後ろでPrometheusインスタンスを運用し、全てのPrometheusのエンドポイントが`/prometheus`を通して利用可能にしたいとする。
 つまり、Prometheusのエンドポイント`/metrics`に対する完全なURLは、以下のようになるだろう。
@@ -31,7 +31,7 @@ htpasswd -c /etc/nginx/.htpasswd admin
 
 NOTE: この例では、`.htpasswd`を含むnginxの設定ファイルの場所として、`/etc/nginx`を用いるが、インストールの仕方によって異なるであろう。他のよくあるnginxの設定ディレクトリは、`/usr/local/nginx/conf`と`/usr/local/etc/nginx`が挙げられる。
 
-## nginxの設定
+## <span class="original-header">nginx configuration</span>nginxの設定
 
 設定ファイル[`nginx.conf`](https://www.nginx.com/resources/wiki/start/topics/examples/full/)の例を以下に示す。
 この設定で、nginxは、Prometheusへプロキシするエンドポイント`/prometheus`への全ての接続にBasic認証を要求するようになる。
@@ -59,7 +59,7 @@ events {}
 nginx -c /etc/nginx/nginx.conf
 ```
 
-## Prometheusの設定
+## <span class="original-header">Prometheus configuration</span>Prometheusの設定
 
 nginxプロキシの後ろでPrometheusを稼働させる際には、外部URLを`http://localhost:12321/prometheus`に、ルートプリフィックスを`/`にセットする必要がある。
 
@@ -71,7 +71,7 @@ prometheus \
   --web.route-prefix="/"
 ```
 
-## テスト
+## <span class="original-header">Testing</span>テスト
 
 cURLを利用してローカルで構築したnginx/Prometheusに接続できる。このリクエストで試してみよう。
 
@@ -93,14 +93,14 @@ Enter host password for user 'admin':
 何か以下のようなPrometheusの出力を返すはずである。
 
 ```
-# HELP go_gc_duration_seconds A summary of the GC invocation durations.
-# TYPE go_gc_duration_seconds summary
+# <span class="original-header">HELP go_gc_duration_seconds A summary of the GC invocation durations.</span>HELP go_gc_duration_seconds A summary of the GC invocation durations.
+# <span class="original-header">TYPE go_gc_duration_seconds summary</span>TYPE go_gc_duration_seconds summary
 go_gc_duration_seconds{quantile="0"} 0.0001343
 go_gc_duration_seconds{quantile="0.25"} 0.0002032
 go_gc_duration_seconds{quantile="0.5"} 0.0004485
 ...
 ```
 
-## まとめ
+## <span class="original-header">Summary</span>まとめ
 
 このガイドでは、ユーザー名とパスワードを`.htpasswd`に保存し、PrometheusのHTTPエンドポイントにアクセスするユーザーを認証するためにそのファイルの情報を使うようにnginxを設定し、Prometheusをリバースプロキシのために設定した。

@@ -3,7 +3,7 @@ title: メトリクスのプッシュ
 sort_rank: 3
 ---
 
-# メトリクスのプッシュ
+# <span class="original-header">Pushing metrics</span>メトリクスのプッシュ
 
 スクレイプできないコンポーネントを監視しなければならないことがある。
 Prometheusでは、[Pushgateway](https://github.com/prometheus/pushgateway)によって、[短命のサービスレベルのバッチジョブ](/ja/docs/practices/pushing/)からPrometheusがスクレイプ可能な中間的なジョブへと時系列をプッシュ出来るようになる。

@@ -4,7 +4,7 @@ sort_rank: 3
 nav_icon: sliders
 ---
 
-# 設定
+# <span class="original-header">Configuration</span>設定
 
 [Alertmanager](https://github.com/prometheus/alertmanager)は、コマンドラインフラグと設定ファイルを通して設定される。
 コマンドラインフラグは、不変のシステムパラメーターを設定し、設定ファイルは、inhibitionルール、通知ルーティング、通知レシーバーを定義する。

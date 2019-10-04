@@ -4,42 +4,42 @@ sort_rank: 5
 toc: full-width
 ---
 
-# よくある質問
+# <span class="original-header">Frequently Asked Questions</span>よくある質問
 
-## 一般
+## <span class="original-header">General</span>一般
 
-### Prometheusとは何か？
+### <span class="original-header">What is </span>Prometheusとは何か？
 
 Prometheusは、活発なエコシステムを持つ、オープンソースのシステム監視およびアラートのツールキットである。
 [概要](/ja/docs/introduction/overview/)を参照。
 
 
-### Prometheusを他の監視システムと比較してどうか？
+### <span class="original-header">How does </span>Prometheus<span class="original-header"> compare against other monitoring systems?</span>を他の監視システムと比較してどうか？
 
 [比較](/ja/docs/introduction/comparison/)のページを参照。
 
-### Prometheusはどのような依存があるか？
+### <span class="original-header">What dependencies does </span>Prometheus<span class="original-header"> have?</span>はどのような依存があるか？
 
 Prometheusサーバーはスタンドアローンで稼働し、外部の依存はない。
 
-### Prometheusを高可用にすることはできるか？
+### <span class="original-header">Can </span>Prometheus<span class="original-header"> be made highly available?</span>を高可用にすることはできるか？
 
 はい。同一のPrometheusサーバーを2つ以上の別々のマシンで稼働させればよい。
 同一のアラートは[Alertmanager](https://github.com/prometheus/alertmanager)が重複排除をする。
 
 [Alertmanagerを高可用にする](https://github.com/prometheus/alertmanager#high-availability)には、[Mesh cluster](https://github.com/weaveworks/mesh)内で複数のインスタンスを実行し、Prometheusがそれぞれのインスタンスに通知を送信するように設定することができる。
 
-### Prometheusはスケールしないと言われました
+### <span class="original-header">I was told </span>Prometheus<span class="original-header"> “doesn't scale”.</span>はスケールしないと言われました
 
 実際には、Prometheusをスケールさせたり連合(federate)させる様々な方法がある。
 Robust Perception blogの[Scaling and Federating Prometheus](https://www.robustperception.io/scaling-and-federating-prometheus/)を参照すること。
 
-### Prometheusはどの言語で書かれていますか？
+### <span class="original-header">What language is </span>Prometheus<span class="original-header"> written in?</span>はどの言語で書かれていますか？
 
 PrometheusのほとんどのコンポーネントはGoで書かれている。
 いくつかはJava、Python、Rubyでも書かれている。
 
-### Prometheusの機能やストレージの形式、APIはどれぐらい安定していますか？
+### <span class="original-header">How stable are </span>Prometheus<span class="original-header"> features, storage formats, and APIs?</span>の機能やストレージの形式、APIはどれぐらい安定していますか？
 
 GitHubのPrometheusオーガニゼーションにあるバージョン1.0.0以上の全てのリポジトリは[セマンティック バージョニング](https://semver.org/lang/ja/)に従っている。
 破壊的な変更は、メジャーバージョンのインクリメントで表される。
@@ -49,7 +49,7 @@ GitHubのPrometheusオーガニゼーションにあるバージョン1.0.0以�
 各リポジトリで適切なリリースプロセスと1.0.0リリースを目指している。
 破壊的な変更は何れにしてもリリースノートで示され（`[CHANGE]`と記される）、正式にリリースされていないコンポーネントに対しては、明確に伝えられる。
 
-### なぜpushではなくpullなのか？
+### <span class="original-header">Why do you pull rather than push?</span>なぜプッシュではなくプルなのか？
 
 HTTPを通してpullすることには、たくさんの利点がある。
 
@@ -61,7 +61,7 @@ HTTPを通してpullすることには、たくさんの利点がある。
 
 pushしなければならない場合のために、[Pushgateway](/ja/docs/instrumenting/pushing/)を提供している。
 
-### どうやってPrometheusにログを取り込みますか？
+### <span class="original-header">How to feed logs into </span>どうやってPrometheusにログを取り込みますか？
 
 短い答え：やらないで下さい。[ELK stack](https://www.elastic.co/jp/products/)のようなものを使うこと。
 
@@ -70,27 +70,27 @@ Raintankのブログ記事[Logs and Metrics and Graphs, Oh My!](https://blog.rai
 
 アプリケーションのログからPrometheusのメトリクスを抽出したい場合は、Googleの[mtail](https://github.com/google/mtail)が役に立つであろう。
 
-### 誰がPrometheusを書きましたか？
+### <span class="original-header">Who wrote </span>誰がPrometheusを書きましたか？
 
 Prometheusは、最初は、[Matt T. Proud](http://www.matttproud.com)と[Julius Volz](http://juliusv.com)によって個人的に始められた。
 初期の開発の大部分は[SoundCloud](https://soundcloud.com)に支援されていた。
 
 今は、幅広い企業や個人によって保守・拡張されている。
 
-### どのようなライセンスの下でPrometheusはリリースされていますか？
+### <span class="original-header">What license is </span>どのようなライセンスの下でPrometheus<span class="original-header"> released under?</span>はリリースされていますか？
 
 Prometheusは[Apache 2.0](https://github.com/prometheus/prometheus/blob/master/LICENSE)ライセンスの下でリリースされている。
 
-### Prometheusの複数形は？
+### <span class="original-header">What is the plural of </span>Prometheusの複数形は？
 
 [広範囲の調査](https://youtu.be/B_CDeYrqxjQ)の後で、正しいPrometheusの複数形はPrometheisであると確定した。
 
-### Prometheusの設定をリロードすることはできますか？
+### <span class="original-header">Can I reload </span>Prometheus<span class="original-header">'s configuration?</span>の設定をリロードすることはできますか？
 
 はい、Prometheusのプロセスに`SIGHUP`を送るか、エンドポイント`/-/reload`にHTTP POSTリクエスト送ると、設定ファイルをリロードして適用します。
 様々なコンポーネントが、変更の失敗をうまく扱うように試みます。
 
-### アラートを送信できますか？
+### <span class="original-header">Can I send alerts?</span>アラートを送信できますか？
 
 [Alertmanager](https://github.com/prometheus/alertmanager)でできる。
 
@@ -104,71 +104,71 @@ Prometheusは[Apache 2.0](https://github.com/prometheus/prometheus/blob/master/L
 * [Pushover](https://pushover.net/)
 * [Slack](https://slack.com/)
 
-### ダッシュボードを作成できますか？
+### <span class="original-header">Can I create dashboards?</span>ダッシュボードを作成できますか？
 
 できる。プロダクションでの利用には[Grafana](/ja/docs/visualization/grafana/)を推奨している。
 [コンソールテンプレート](/ja/docs/visualization/consoles/)もある。
 
-### タイムゾーンを変更できるか？なぜ全てUTCなのか？
+### <span class="original-header">Can I change the timezone? Why is everything in </span>タイムゾーンを変更できるか？なぜ全てUTCなのか？
 
 タイムゾーンに関するあらゆる混乱（特に、いわゆるdaylight saving timeに関わる混乱）を避けるために、Prometheusの全てのコンポーネントで、内部的にはUnix timeのみを、表示にはUTCのみを用いると決められている。UIには、慎重に選ばれたタイムゾーンを導入することができるかもしれない。この試みに関する現状は[issue #500](https://github.com/prometheus/prometheus/issues/500)を参照のこと。
 
-## メトリクス組み込み
+## <span class="original-header">Instrumentation</span>メトリクス組み込み
 
-### どの言語にメトリクスを組み込むためのライブラリがありますか？
+### <span class="original-header">Which languages have instrumentation libraries?</span>どの言語にメトリクスを組み込むためのライブラリがありますか？
 
 自分のサービスにPrometheusのメトリクスを組み込むためのライブラリはたくさんある。
 詳細は[クライアントライブラリ](/ja/docs/instrumenting/clientlibs/)のドキュメントを参照すること。
 
 新しい言語のためのクライアントライブラリに貢献する気がある場合、[出力フォーマット](/ja/docs/instrumenting/exposition_formats/)を参照すること。
 
-### マシンを監視することはできますか？
+### <span class="original-header">Can I monitor machines?</span>マシンを監視することはできますか？
 
 できる。[Node Exporter](https://github.com/prometheus/node_exporter)は、Linuxや他のUnixシステムのCPU使用率、メモリ、ディスク利用率、ファイルシステム、ネットワーク帯域のような広範にわたるマシンレベルのメトリクスを出力する。
 
-### ネットワークデバイスを監視することはできますか？
+### <span class="original-header">Can I monitor network devices?</span>ネットワークデバイスを監視することはできますか？
 
 できる。[SNMP Exporter](https://github.com/prometheus/snmp_exporter)によってSNMPをサポートしているデバイスを監視することができる。
 
-### バッチジョブを関することはできますか？
+### <span class="original-header">Can I monitor batch jobs?</span>バッチジョブを関することはできますか？
 
 [Pushgateway](/ja/docs/instrumenting/pushing/)を使うことでできる。
 バッチジョブの監視について[ベストプラクティス](/ja/docs/instrumenting/pushing/)も参照すること。
 
-### どんなアプリケーションがPrometheusですぐに監視できますか？
+### <span class="original-header">What applications can </span>どんなアプリケーションがPrometheus<span class="original-header"> monitor out of the box?</span>ですぐに監視できますか？
 
 [exporterとインテグレーションの一覧](/ja/docs/instrumenting/exporters/)を参照すること。
 
-### JMXでJVMアプリケーションを監視できますか？
+### <span class="original-header">Can I monitor </span>JVMアプリケーション<span class="original-header"> applications via </span>をJMXで監視できますか？
 
 Javaクライアントで直接メトリクスを組み込めないアプリケーションに対しては、スタンドアロンでもJava Agentとしてでも[JMX Exporter](https://github.com/prometheus/jmx_exporter)を利用することができる。
 
-### メトリクスを組み込んだ場合のパフォーマンスへの影響は？
+### <span class="original-header">What is the performance impact of instrumentation?</span>メトリクスを組み込んだ場合のパフォーマンスへの影響は？
 
 パフォーマンスは、クライアントライブラリや言語によって様々であろう。
 Javaに関しては、[ベンチマーク](https://github.com/prometheus/client_java/blob/master/benchmark/README.md)によると、Javaクライアントのカウンター/ゲージを一つインクリメントするのに12〜17nsかかることが示唆されている。
 これは、レイテンシーが致命的なほとんどのコード以外全てで無視できる。
 
-## 問題解決
+## <span class="original-header">Troubleshooting</span>問題解決
 
-### バージョン1.xのPrometheusサーバーが起動するのに長い時間がかかり、クラッシュ復旧に関するおびただしいログを出力します
+### <span class="original-header">My </span>Prometheus 1.x<span class="original-header"> server takes a long time to start up and spams the log with copious information about crash recovery.</span>のサーバーが起動するのに長い時間がかかり、クラッシュ復旧に関するおびただしいログを出力します
 
 Prometheusは`SIGTERM`の後で綺麗にシャットダウンしなければならず、激しく使われているサーバーではそれにしばらく時間がかかることもある。サーバーがクラッシュしたり、強制的に終了させられたり（例えば、メモリ不足でカーネルにkillされたり、Prometheusのシャットダウンの途中でランレベルシステムが待ちきれなくなったり）すると、クラッシュからの復旧が実行される。
 これは普通の状況下では1分もかからないが、ある種の状況下ではかなり長い時間がかかることもあり得る。
 詳細は、[crash recovery](/docs/prometheus/1.8/storage/#crash-recovery)を参照すること。
 
-### Prometheus 1.xのサーバーがメモリ不足になります
+### <span class="original-header">My </span>Prometheus 1.x<span class="original-header"> server runs out of memory.</span>のサーバーがメモリ不足になります
 
 Prometheusが利用可能なメモリ量を設定するために、[メモリ利用についてのセクション](/docs/prometheus/1.8/storage/#memory-usage)を参照すること。
 
-### Prometheus 1.xのサーバーが“rushed mode”であるあるいは“storage needs throttling”だとレポートします
+### <span class="original-header">My Prometheus 1.x server reports to be in “rushed mode” or that “storage needs throttling”.</span>Prometheus 1.xのサーバーが“rushed mode”であるあるいは“storage needs throttling”だとレポートします
 
 ストレージの負荷が高くなっている。
 パフォーマンスをよくするためにどう設定を調整するか理解するために[ローカルストレージの設定についてのセクション](/docs/prometheus/1.8/storage/)を読むこと。
 
-## 実装
+## <span class="original-header">Implementation</span>実装
 
-### 全ての値が64-bit floatなのはなぜですか？integerがいいんですが…
+### <span class="original-header">Why are all sample values </span>全ての値が64-bit float<span class="original-header">s? I want integer</span>なのはなぜですか？integer<span class="original-header">s.</span>がいいんですが…
 
 設計を単純にするために64-bitのfloatに制限している。
 [IEEE 754 倍精度浮動小数点数](https://ja.wikipedia.org/wiki/倍精度浮動小数点数)は、2^53までの精度の整数をサポートしている。
@@ -176,7 +176,7 @@ Prometheusが利用可能なメモリ量を設定するために、[メモリ利
 原理的には、他の型（64 bitよりも大きな整数の方を含む）のサポートは、実装可能ではあるが、現時点の優先事項ではない。
 カウンターは、秒間100万回インクリメントされても、285年以上経たないと精度の問題にぶつからない。
 
-### なぜPrometheusサーバーはTLSや認証をサポートしないのですか？追加できますか？
+### <span class="original-header">Why don't the </span>なぜPrometheus<span class="original-header"> server components support </span>サーバーはTLS<span class="original-header"> or authentication? Can I add those?</span>や認証をサポートしないのですか？追加できますか？
 
 注意：Prometheusチームは、2018年8月11日のdevelopment summitでこれに関する姿勢を変更した。
 提供しているエンドポイントのTLSと認証のサポートは[プロジェクトのロードマップ](/ja/docs/introduction/roadmap/#tls-and-authentication-in-http-serving-endpoints)に記載されている。

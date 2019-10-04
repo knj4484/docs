@@ -3,12 +3,12 @@ title: いつPushgatewayを使うべきか
 sort_rank: 7
 ---
 
-# いつPushgatewayを使うべきか
+# <span class="original-header">When to use the </span>いつPushgatewayを使うべきか
 
 Pushgatewayは、スクレイプすることができないジョブからメトリクスをプッシュできるようにするための中間的なサービスである。
 詳細は、[メトリクスのプッシュ](/ja/docs/instrumenting/pushing/)を参照。
 
-## Pushgatewayを使うべきか？
+## <span class="original-header">Should I be using the </span>Pushgatewayを使うべきか？
 
 **特定の限られた場合にのみPushgatewayを利用することを推奨する。**
 一般的なメトリクスの収集に、Prometheusの通常のpullモデルの代わりにPushgatewayを盲目的に使うと落とし穴にはまることがある。
@@ -25,7 +25,7 @@ Pushgatewayを使うと、こうはならないので、古くなったメトリ
 **Pushgatewayの唯一の正当な利用方法は、サービスレベルのバッチの出力を追跡することである。**「サービスレベル」のバッチとは、特定のマシンやジョブインスタンスに意味的に結びついていないもののこと（例えば、サービス全体の多くのユーザーを削除するバッチ）である。そのようなジョブのメトリクスは、メトリクスから特定のマシンやインスタンスのライフサイクルを分離するために、マシンやインスタンスのラベルを含むべきではない。こうすることで、Pushgatewayにある古くなったメトリクスを管理する負荷を減らすことが出来る。
 [バッチジョブ監視のベストプラクティス](/ja/docs/practices/instrumentation/#batch-jobs)も参照すること。
 
-## 代替手段
+## <span class="original-header">Alternative strategies</span>代替手段
 
 もしファイアウォールやNATが監視対象からのpullを妨げているなら、Prometheusサーバーのファイアウォール内への移動を考えること。
 Prometheusのサーバーを監視対象と同じネットワークで稼働させることが一般的に推奨されている。

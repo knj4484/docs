@@ -3,7 +3,7 @@ title: 出力フォーマット
 sort_rank: 6
 ---
 
-# 出力フォーマット
+# <span class="original-header">Exposition formats</span>出力フォーマット
 
 メトリクスは、単純な[テキストベース](#text-based-format)の出力フォーマットを利用してPrometheusに出力することができる。
 このフォーマットを実装した様々なクライアントライブラリがある。
@@ -39,12 +39,12 @@ Prometheusのテキストベースフォーマットは、行指向である。
 最後の行は、line feed文字で終わらなければならない。
 空行は無視される。
 
-#### 行のフォーマット
+#### <span class="original-header">Line format</span>行のフォーマット
 
 行の中で、トークンは、任意の数の空白やタブで分割することができる（最低1つ以上、さもなければ直前のトークンにまとめられる）。
 最初や最後のホワイトスペースは無視される。
 
-#### コメント、ヘルプテキスト、型情報
+#### <span class="original-header">Comments, help text, and type information</span>コメント、ヘルプテキスト、型情報
 
 最初のホワイトスペース以外の文字が`#`の行は、コメントである。
 それらは、`#`の直後のトークンが、`HELP`や`TYPE`でなければ、無視される。
@@ -74,7 +74,7 @@ metric_name [
 * `value`は、Goの関数`ParseFloat()`の仕様に従ったfloatである。標準的な数値に加えて、`Nan`、`+Inf`、`-Inf`が有効な値で、それぞれ数値でない、正の無限、負の無限を表す
 * `timestamp`は、Goの関数[`ParseInt()`](https://golang.org/pkg/strconv/#ParseInt)の仕様に従ったint64（エポック、つまり1970-01-01 00:00:00 UTCからの、うるう秒を除く、ミリ秒）である
 
-#### グループ化とソート
+#### <span class="original-header">Grouping and sorting</span>グループ化とソート
 
 あるメトリックのための全ての行は、オプションで`HELP`と`TYPE`の行を伴って、1つのグループとして提供されていなければならない。
 さらに、繰り返して出力される際に、再現性のある並び順になっていることが望ましいが、必須ではない。言い換えると、計算コストが高価な場合にはソートしないこと。
@@ -82,7 +82,7 @@ metric_name [
 各行は、メトリック名とラベルのユニークな組み合わせになっていなければならない。
 そうでなければ、それを取り込む際の振る舞いは定義されていない。
 
-#### ヒストグラムとサマリー
+#### <span class="original-header">Histograms and summaries</span>ヒストグラムとサマリー
 
 ヒストグラムとサマリーはテキストフォーマットで表すのが難しい。
 以下の慣例を適用する。
@@ -94,7 +94,7 @@ metric_name [
 * ヒストグラムは、`{le="+Inf"}`のバケットを持たなければならない。その値は`x_count`の値と等しくなければならない
 * ヒストグラムのバケットとサマリーの分位数は、それぞれ`le`、`quantile`に対する値が数値的に増加する順で現れなければならな*
 
-### テキストフォーマット例
+### <span class="original-header">Text format example</span>テキストフォーマット例
 
 コメント、`HELP`、`TYPE`、ヒストグラム、サマリー、エスケープなど、一通り揃ったPrometheusのメトリクスの出力を以下に示す。
 
@@ -137,6 +137,6 @@ rpc_duration_seconds_sum 1.7560473e+07
 rpc_duration_seconds_count 2693
 ```
 
-## 過去のバージョン
+## <span class="original-header">Historical versions</span>過去のバージョン
 
 過去のフォーマットのバージョンの詳細は、[Client Data Exposition Format](https://docs.google.com/document/d/1ZjyKiKxZV83VI9ZKAXRGKaUKK2BIWCT7oiGBKDBpjEY/edit?usp=sharing)を参照すること。

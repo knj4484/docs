@@ -2,7 +2,7 @@
 title: 監視対象検出のためのファイルベースサービスディスカバリーの利用
 ---
 
-# 監視対象検出のためのファイルベースサービスディスカバリーの利用
+# <span class="original-header">Use file-based service discovery to discover scrape targets</span>監視対象検出のためのファイルベースサービスディスカバリーの利用
 
 Prometheusは、監視対象を検出するための[様々なサービスディスカバリーの選択肢](https://github.com/prometheus/prometheus/tree/master/discovery)（[Kubernetes](/ja/docs/prometheus/latest/configuration/configuration/#<kubernetes_sd_config>)や[Consul](/ja/docs/prometheus/latest/configuration/configuration/#<consul_sd_config>)、その他）を提供している。
 現在サポートされていないサービスディスカバリーを利用する必要がある場合には、Prometheusの[ファイルベースのサービスディスカバリー](/ja/docs/prometheus/latest/configuration/configuration/#<file_sd_config>)が最も役立つであろう。
@@ -14,7 +14,7 @@ Prometheusは、監視対象を検出するための[様々なサービスディ
 * そのNode Exporterのホストとポートを指定する`targets.json`を作成する
 * その`targets.json`を使ってNode Exporterを検出するように設定されたPrometheusインスタンスをインストール、実行する
 
-## Node Exporterのインストールと実行
+## <span class="original-header">Installing and running the </span>Node Exporterのインストールと実行
 
 [Node Exporterを用いたLinuxホストのメトリクス監視](../node-exporter)の[Node Exporterのインストールと実行](../node-exporter#installing-and-running-the-node-exporter)の部分を参照して行う。
 
@@ -33,7 +33,7 @@ go_gc_duration_seconds{quantile="0.5"} 0
 ...
 ```
 
-## Prometheusのインストールと設定、実行
+## <span class="original-header">Installing, configuring, and running </span>Prometheusのインストールと設定、実行
 
 Node Exporterと同じように、Prometheusは一つの静的なバイナリで、tarballからインストールできる。
 プラットフォームに合った[最新リリースをダウンロード](/download#prometheus)し、展開する。
@@ -87,12 +87,12 @@ Prometheusがうまく起動したら、ログに下記のような行が見ら�
 level=info ts=2018-08-13T20:39:24.905651509Z caller=main.go:500 msg="Server is ready to receive web requests."
 ```
 
-## 検出されたサービスのメトリクス調査
+## <span class="original-header">Exploring the discovered services' metrics</span>検出されたサービスのメトリクス調査
 
 稼働中のPrometheusによって、`node`サービスで出力されたメトリクスを[expressionブラウザ](/ja/docs/visualization/browser)を使って調査することが出来る。
 例えば、[`up{job="node"}`](http://localhost:9090/graph?g0.range_input=1h&g0.expr=up%7Bjob%3D%22node%22%7D&g0.tab=1)というメトリックを調査すると、Node Exporterが適切に検出されていることが分かる。
 
-## 監視対象リストの動的な変更
+## <span class="original-header">Changing the targets list dynamically</span>監視対象リストの動的な変更
 
 Prometheusのファイルベースのサービスディスカバリーを利用しているときには、Prometheusはファイルの変更をリッスンしており、再起動を必要とすることなく、監視対象リストを自動的に更新する。
 この説明のために、二つ目のNode Exporterを9200ポートで起動する。
@@ -128,6 +128,6 @@ Prometheusのファイルベースのサービスディスカバリーを利用�
 変更を保存することで、自動的にPrometheusに新しい監視対象リストが知らされる。
 メトリック[`up{job="node"}`](http://localhost:9090/graph?g0.range_input=1h&g0.expr=up%7Bjob%3D%22node%22%7D&g0.tab=1)は、ラベル`instance`が`localhost:9100`と`localhost:9200`の二つのインスタンスを表示するはずである。
 
-## まとめ
+## <span class="original-header">Summary</span>まとめ
 
 このガイドでは、Node Exporterをインストール、実行し、ファイルベースのサービスディスカバリーでそのNode Exporterを検出しメトリクスを取得するように、Prometheusを設定した。
