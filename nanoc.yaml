@@ -70,7 +70,7 @@ data_sources:
     items_root: /docs/prometheus/latest/
     config:
       name: 'latest (2.12)'
-      repository: https://github.com/prometheus/prometheus.git
+      repository: https://github.com/knj4484/prometheus.git
       refspec: release-2.12-m17n
       lang: en
       root: docs/en/
@@ -81,9 +81,10 @@ data_sources:
     items_root: /docs/prometheus/2.12/
     config:
       name: '2.12'
-      repository: https://github.com/prometheus/prometheus.git
-      refspec: release-2.12
+      repository: https://github.com/knj4484/prometheus.git
+      refspec: release-2.12-m17n
       canonical: /docs/prometheus/latest/
+      root: docs/en/
     encoding: utf-8
   -
     type: repo_docs
@@ -91,9 +92,11 @@ data_sources:
     items_root: /docs/prometheus/2.11/
     config:
       name: '2.11'
-      repository: https://github.com/prometheus/prometheus.git
-      refspec: release-2.11
+      repository: https://github.com/knj4484/prometheus.git
+      refspec: release-2.11-m17n
       canonical: /docs/prometheus/latest/
+      lang: en
+      root: docs/en/
     encoding: utf-8
   -
     type: repo_docs
@@ -105,6 +108,7 @@ data_sources:
       refspec: release-2.10
       canonical: /docs/prometheus/latest/
       outdated: /docs/prometheus/latest/
+      lang: en
     encoding: utf-8
   -
     type: repo_docs
@@ -116,6 +120,7 @@ data_sources:
       refspec: release-2.9
       canonical: /docs/prometheus/latest/
       outdated: /docs/prometheus/latest/
+      lang: en
     encoding: utf-8
   -
     type: repo_docs
@@ -127,6 +132,7 @@ data_sources:
       refspec: release-2.8
       canonical: /docs/prometheus/latest/
       outdated: /docs/prometheus/latest/
+      lang: en
     encoding: utf-8
   -
     type: repo_docs
@@ -138,6 +144,7 @@ data_sources:
       refspec: release-2.7
       canonical: /docs/prometheus/latest/
       outdated: /docs/prometheus/latest/
+      lang: en
     encoding: utf-8
   -
     type: repo_docs
@@ -149,6 +156,7 @@ data_sources:
       refspec: release-2.6
       canonical: /docs/prometheus/latest/
       outdated: /docs/prometheus/latest/
+      lang: en
     encoding: utf-8
   -
     type: repo_docs
@@ -160,6 +168,7 @@ data_sources:
       refspec: release-2.5
       canonical: /docs/prometheus/latest/
       outdated: /docs/prometheus/latest/
+      lang: en
     encoding: utf-8
   -
     type: repo_docs
@@ -171,6 +180,7 @@ data_sources:
       refspec: release-2.4
       canonical: /docs/prometheus/latest/
       outdated: /docs/prometheus/latest/
+      lang: en
     encoding: utf-8
   -
     type: repo_docs
@@ -182,6 +192,7 @@ data_sources:
       refspec: release-2.3
       canonical: /docs/prometheus/latest/
       outdated: /docs/prometheus/latest/
+      lang: en
     encoding: utf-8
   -
     type: repo_docs
@@ -193,6 +204,7 @@ data_sources:
       refspec: release-2.2
       canonical: /docs/prometheus/latest/
       outdated: /docs/prometheus/latest/
+      lang: en
     encoding: utf-8
   -
     type: repo_docs
@@ -204,6 +216,7 @@ data_sources:
       refspec: release-2.1
       canonical: /docs/prometheus/latest/
       outdated: /docs/prometheus/latest/
+      lang: en
     encoding: utf-8
   -
     type: repo_docs
@@ -215,6 +228,7 @@ data_sources:
       refspec: release-2.0
       canonical: /docs/prometheus/latest/
       outdated: /docs/prometheus/latest/
+      lang: en
     encoding: utf-8
   -
     type: repo_docs
@@ -226,6 +240,7 @@ data_sources:
       refspec: release-1.8
       canonical: /docs/prometheus/latest/
       outdated: /docs/prometheus/latest/
+      lang: en
     encoding: utf-8
   -
     type: filesystem
@@ -250,8 +265,9 @@ data_sources:
     items_root: /ja/docs/prometheus/latest/
     config:
       name: 'latest (2.12)'
-      repository: https://github.com/prometheus/prometheus.git
+      repository: https://github.com/knj4484/prometheus.git
       refspec: release-2.12-m17n
+      canonical: /docs/prometheus/latest/
       lang: ja
       root: docs/ja/
     encoding: utf-8
@@ -261,7 +277,7 @@ data_sources:
     items_root: /ja/docs/prometheus/2.12/
     config:
       name: '2.12'
-      repository: https://github.com/prometheus/prometheus.git
+      repository: https://github.com/knj4484/prometheus.git
       refspec: release-2.12-m17n
       canonical: /docs/prometheus/latest/
       lang: ja
@@ -273,22 +289,12 @@ data_sources:
     items_root: /ja/docs/prometheus/2.11/
     config:
       name: '2.11'
-      repository: https://github.com/prometheus/prometheus.git
+      repository: https://github.com/knj4484/prometheus.git
       refspec: release-2.11-m17n
       canonical: /docs/prometheus/latest/
       lang: ja
       root: docs/ja/
     encoding: utf-8
-  -
-    type: repo_docs
-    identifier_type: legacy
-    items_root: /ja/docs/prometheus/latest/
-    config:
-      name: '2.8'
-      repository: file:///Users/knj4484/Downloads/github/prometheus/prometheus/
-      refspec: release-2.8-m17n
-      lang: ja
-      root: docs/ja/
 
 # Configuration for the “check” command, which run unit tests on the site.
 checks:
