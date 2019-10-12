@@ -3,7 +3,7 @@ title: はじめの一歩
 sort_rank: 3
 ---
 
-# <span class="original-header">First steps with </span>Prometheusのはじめの一歩
+# <span class="anchor-text-supplement">First steps with </span>Prometheusのはじめの一歩
 
 Prometheusへようこそ！
 Prometheusは、監視対象のHTTPエンドポイントをスクレイプすることで監視対象からメトリクスを収集する監視プラットフォームである。
@@ -14,7 +14,7 @@ Prometheusをダウンロード、インストール、実行することにな�
 
 
 
-## <span class="original-header">Downloading </span>Prometheusのダウンロード
+## <span class="anchor-text-supplement">Downloading </span>Prometheusのダウンロード
 
 自分のプラットフォームに合った[最新リリースをダウンロード](/download)し、展開する。
 ```language-bash
@@ -37,7 +37,7 @@ The Prometheus monitoring server
 Prometheusを起動する前に、設定をしよう。
 
 
-## <span class="original-header">Configuring </span>Prometheusの設定
+## <span class="anchor-text-supplement">Configuring </span>Prometheusの設定
 
 Prometheusの設定は、[YAML](http://www.yaml.org/start.html)である。
 Prometheusをダウンロードすると、`prometheus.yml`という設定例が付属している。
@@ -83,7 +83,7 @@ Prometheusは、ターゲットのパス`/metrics`でメトリクスが取得可
 
 設定項目の完全な仕様については、[設定のドキュメント](/ja/docs/operating/configuration)を参照すること。
 
-## <span class="original-header">Starting </span>Prometheusの起動
+## <span class="anchor-text-supplement">Starting </span>Prometheusの起動
 
 ここで作成した設定ファイルでPrometheusを起動するには、Prometheusのバイナリを含むディレクトリに移動し、以下のコマンドを実行する。
 
@@ -98,7 +98,7 @@ Prometheusは、ターゲットのパス`/metrics`でメトリクスが取得可
 メトリクスのエンドポイント[http://localhost:9090/metrics](http://localhost:9090/metrics)に移動することで、
 Prometheusが出力しているメトリクスを確認することもできる。
 
-## <span class="original-header">Using the </span>expression<span class="original-header"> browser</span>ブラウザの利用
+## <span class="anchor-text-supplement">Using the </span>expression<span class="anchor-text-supplement"> browser</span>ブラウザの利用
 
 Prometheusが自分自身について収集したデータを見てみよう。
 Prometheusの組み込みexpressionブラウザーを利用するには、[http://localhost:9090/graph](http://localhost:9090/graph)に移動し、GraphタブのConsoleビューを選択する。
@@ -126,7 +126,7 @@ count(promhttp_metric_handler_requests_total)
 
 クエリ言語についてさらに知りたい場合は、[クエリ言語のドキュメント](/ja/docs/querying/basics/)を参照すること。
 
-## <span class="original-header">Using the graphing interface</span>グラフ化インターフェースの利用
+## <span class="anchor-text-supplement">Using the graphing interface</span>グラフ化インターフェースの利用
 
 式をグラフ化するには、[http://localhost:9090/graph](http://localhost:9090/graph)に移動し、Graphタブを利用する。
 
@@ -138,12 +138,12 @@ rate(promhttp_metric_handler_requests_total{code="200"}[1m])
 
 グラフ幅のパラメーターや他の設定を試すことができる。
 
-## <span class="original-header">Monitoring other targets</span>他のターゲットの監視
+## <span class="anchor-text-supplement">Monitoring other targets</span>他のターゲットの監視
 
 Prometheusに何ができるかもっとよく理解するためには、他のexporterについてのドキュメントを調べてみることを推奨する。
 まずは、[Node Exporterを用いたLinuxホストのメトリクス監視](/ja/docs/guides/node-exporter)が良いだろう。
 
-## <span class="original-header">Summary</span>まとめ
+## <span class="anchor-text-supplement">Summary</span>まとめ
 
 このガイドでは、Prometheusをインストールし、リソースを監視するようにPrometheusインスタンスを設定し、Prometheusのexpressionブラウザで時系列データを扱う基本を学んだ。
 Prometheusを学習し続けるには、次に何を探すべきか理解するために[概要](/ja/docs/introduction/overview)を見てみると良い。

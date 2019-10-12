@@ -3,19 +3,19 @@ title: ヒストグラムとサマリー
 sort_rank: 4
 ---
 
-# <span class="original-header">Histograms and summaries</span>ヒストグラムとサマリー
+# <span class="anchor-text-supplement">Histograms and summaries</span>ヒストグラムとサマリー
 
 ヒストグラムとサマリーは、複雑なメトリック型である。
  一つのヒストグラムやサマリーが多数の時系列を生成するということもあるが、これらの型を正しく使おうとするとさらに難しくなる。 このページは、自分のユースケースにあった適切なメトリック型を選択・設定する助けとなるだろう。
 
 
-## <span class="original-header">Library support</span>Library support
+## <span class="anchor-text-supplement">Library support</span>Library support
 
 まずは、[ヒストグラム](/ja/docs/concepts/metric_types/#histogram)と[サマリー](/ja/docs/concepts/metric_types/#summary)のライブラリサポートを確認すること。
 
 2つの型のうち1つしかサポートしていなかったり、サマリーの使い方に制限がある（[分位数（quantile）の計算](#quantiles)がない）ライブラリもある。
 
-## <span class="original-header">Count and sum of observations</span>観測値のカウントと合計
+## <span class="anchor-text-supplement">Count and sum of observations</span>観測値のカウントと合計
 
 ヒストグラムとサマリーはどちらも、観測値（典型的にはリクエスト持続時間やレスポンスサイズ）を採取する。 
 どちらも、観測値の平均を計算できるように、観測の数と観測値の合計を保存する。 
@@ -52,7 +52,7 @@ sort_rank: 4
 
 この計算は、satisfiedとtolerableの部分の計算に誤差があるので、伝統的なApdex scoreと正確に等しいわけではない。
 
-## 分位数（quantile<span class="original-header">s</span>）
+## 分位数（quantile<span class="anchor-text-supplement">s</span>）
 
 いわゆるφ分位数（0 ≤ φ ≤ 1）を計算するには、サマリーとヒストグラムの両方を使うことができる。 φ分位数とは、N個の観測値の中でφ*N番目に位置する観測値である。 φ分位数の例として、0.5分位数は中央値として知られている。 0.95分位数とは、95パーセンタイルのことである。
 
@@ -87,7 +87,7 @@ function](/ja/docs/prometheus/latest/querying/functions/#histogram_quantile)に�
 
 さらに、SLAが変わって90パーセンタイルをグラフ化したくなったり、直近5分ではなく直近10分を考慮したくなったとしても、上記の式を調整するだけでよく、クライアントを再設定する必要がない。
 
-## <span class="original-header">Errors of quantile estimation</span>分位数推定の誤差
+## <span class="anchor-text-supplement">Errors of quantile estimation</span>分位数推定の誤差
 
 分位数は、クライアント側、サーバー側のどちらで計算されたとしても、推定値である。
 その推定の誤差について理解することは重要である。
@@ -131,7 +131,7 @@ SLAからわずかに外れただけなのに、計算された95パーセンタ
 
   2. そうでない場合、観測される値の範囲や分布について分かっているなら、ヒストグラムを選ぶ。値の範囲や分布によらず正確な分位数が必要なら、サマリーを選ぶ
 
-## <span class="original-header">What can I do if my client library does not support the metric type I need?</span>必要な型をクライアントライブラリがサポートしていない場合、どうすればいいですか？
+## <span class="anchor-text-supplement">What can I do if my client library does not support the metric type I need?</span>必要な型をクライアントライブラリがサポートしていない場合、どうすればいいですか？
 
 実装しましょう！
 [コードの貢献は歓迎されます](/community/)。

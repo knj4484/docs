@@ -3,11 +3,11 @@ title: メトリック名とラベル名
 sort_rank: 1
 ---
 
-# <span class="original-header">Metric and label naming</span>メトリック名とラベル名
+# <span class="anchor-text-supplement">Metric and label naming</span>メトリック名とラベル名
 
 このドキュメントで提示されているメトリックとラベルの規約は、Prometheusの利用にあたって必須とは言えないが、スタイルガイドおよびベストプラクティスとして利用できる。個々の組織では、これらのプラクティスのいくつか（例えば、命名規約）を変更したいかもしれない。
 
-## <span class="original-header">Metric names</span>メトリック名
+## <span class="anchor-text-supplement">Metric names</span>メトリック名
 
 メトリック名は、
 
@@ -37,7 +37,7 @@ sort_rank: 1
 もしそれらが意味をなさないなら、そのデータを複数のメトリクスに分解すること。
 例えば、様々なキューの容量を一つのメトリックとして持つことは良いが、キューの現在の要素数を混ぜるのは良くない。
 
-## <span class="original-header">Labels</span>ラベル
+## <span class="anchor-text-supplement">Labels</span>ラベル
 
 ラベルは、測定されるものの特徴が区別できるように使うこと。
 
@@ -48,7 +48,7 @@ sort_rank: 1
 
 CAUTION: 全てのkey-valueの組み合わせは新しい時系列となり、データ量を劇的に増やしてしまう。沢山の値を持つラベル（ユーザーIDやメールアドレス、その他の無限集合であるもの）は使わないこと
 
-## <span class="original-header">Base units</span>基本単位
+## <span class="anchor-text-supplement">Base units</span>基本単位
 
 Prometheusには、ハードコードされた単位はない。
 互換性をよくするために、基本単位を用いるべきである。

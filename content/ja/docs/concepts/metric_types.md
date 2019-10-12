@@ -3,7 +3,7 @@ title: メトリクスの型
 sort_rank: 2
 ---
 
-# <span class="original-header">Metric types</span>メトリクスの型
+# <span class="anchor-text-supplement">Metric types</span>メトリクスの型
 
 Prometheusクライアントライブラリは、4つのメトリック型を提供している。 これらは、現在は、クライアントライブラリの中で（それらの特定の型の利用方法に応じたAPIを可能にするため）、および通信プロトコルの中でのみ区別されている。 Prometheusサーバーは、型情報をまだ利用しておらず、全てのデータを型なしの時系列データに押しつぶしている。 これは、将来的には変更されるかもしれない。
 

@@ -3,7 +3,7 @@ title: Grafana
 sort_rank: 2
 ---
 
-# Grafana<span class="original-header"> support for </span>のPrometheusサポート
+# Grafana<span class="anchor-text-supplement"> support for </span>のPrometheusサポート
 
 [Grafana](http://grafana.org/)はPrometheusのクエリをサポートしている。
 Prometheus用のGrafanaデータソースは、Grafana 2.5.0 (2015-10-28)から含まれている。
@@ -12,27 +12,27 @@ Prometheus用のGrafanaデータソースは、Grafana 2.5.0 (2015-10-28)から�
 
 [![Grafana screenshot](/assets/grafana_prometheus.png)](/assets/grafana_prometheus.png)
 
-## <span class="original-header">Installing</span>インストール
+## <span class="anchor-text-supplement">Installing</span>インストール
 
 完全なGrafanaのインストール手順は、[Grafana公式ドキュメント](http://docs.grafana.org/installation/)を参照すること。
 
 例えば、Linuxでは、Grafanaのインストールは以下のようになる
 
 ```bash-lang
-# <span class="original-header">Download and unpack Grafana from binary tar (adjust version as appropriate).</span>Download and unpack Grafana from binary tar (adjust version as appropriate).
+# <span class="anchor-text-supplement">Download and unpack Grafana from binary tar (adjust version as appropriate).</span>Download and unpack Grafana from binary tar (adjust version as appropriate).
 curl -L -O https://grafanarel.s3.amazonaws.com/builds/grafana-2.5.0.linux-x64.tar.gz
 tar zxf grafana-2.5.0.linux-x64.tar.gz
 
-# <span class="original-header">Start Grafana.</span>Start Grafana.
+# <span class="anchor-text-supplement">Start Grafana.</span>Start Grafana.
 cd grafana-2.5.0/
 ./bin/grafana-server web
 ```
 
-## <span class="original-header">Using</span>利用方法
+## <span class="anchor-text-supplement">Using</span>利用方法
 
 デフォルトでは、Grafanaは[http://localhost:3000](http://localhost:3000)をリッスンしている。デフォルトのログインは、"admin" / "admin"である。
 
-### <span class="original-header">Creating a </span>Prometheus<span class="original-header"> data source</span>データソースの作成
+### <span class="anchor-text-supplement">Creating a </span>Prometheus<span class="anchor-text-supplement"> data source</span>データソースの作成
 
 Prometheusデータソースを作成するには
 
@@ -48,7 +48,7 @@ Prometheusデータソースを作成するには
 
 [![Data source configuration](/assets/grafana_configuring_datasource.png)](/assets/grafana_configuring_datasource.png)
 
-### <span class="original-header">Creating a </span>Prometheus<span class="original-header"> graph</span>のグラフの作成
+### <span class="anchor-text-supplement">Creating a </span>Prometheus<span class="anchor-text-supplement"> graph</span>のグラフの作成
 
 Follow the standard way of adding a new Grafana graph. Then:
 Grafanaの標準的なグラフ追加の手順に従うこと。そして
@@ -62,7 +62,7 @@ Grafanaの標準的なグラフ追加の手順に従うこと。そして
 以下にPrometheusグラフの設定例を示す。
 [![Prometheus graph creation](/assets/grafana_qps_graph.png)](/assets/grafana_qps_graph.png)
 
-### <span class="original-header">Importing pre-built dashboards from </span>Grafana.comからダッシュボードをインポートする
+### <span class="anchor-text-supplement">Importing pre-built dashboards from </span>Grafana.comからダッシュボードをインポートする
 
 Grafana.comは、[共有されたダッシュボードの収集](https://grafana.com/dashboards)し、保守している。
 それらは、ダウンロードし、Grafanaのスタンドアローンのインスタンスで利用できる。

@@ -3,7 +3,7 @@ title: TLS暗号
 sort_rank: 1
 ---
 
-# <span class="original-header">Securing </span>Prometheus<span class="original-header"> </span>のAPI<span class="original-header"> and </span>とUI<span class="original-header"> endpoints using </span>エンドポイントをTLS<span class="original-header"> encryption</span>暗号で安全にする
+# <span class="anchor-text-supplement">Securing </span>Prometheus<span class="anchor-text-supplement"> </span>のAPI<span class="anchor-text-supplement"> and </span>とUI<span class="anchor-text-supplement"> endpoints using </span>エンドポイントをTLS<span class="anchor-text-supplement"> encryption</span>暗号で安全にする
 
 Prometheusは、expressionブラウザと[HTTP API](../../prometheus/latest/querying/api)の接続に対して、[Transport Layer Security](https://ja.wikipedia.org/wiki/Transport_Layer_Security) (TLS)暗号を直接サポートしていない。 
 それらの接続にTLSを要求したいなら、Prometheusを[リバースプロキシ](https://www.nginx.com/resources/glossary/reverse-proxy-server/)と組み合わせて使い、プロキシレイヤーでTLSを適用することを推奨する。
@@ -39,7 +39,7 @@ openssl req \
 
 プロンプトで適切な情報を入力し、`Common Name`のプロンプトには`example.com`を入力する。
 
-## nginx<span class="original-header"> configuration</span>の設定
+## nginx<span class="anchor-text-supplement"> configuration</span>の設定
 
 設定ファイル[`nginx.conf`](https://www.nginx.com/resources/wiki/start/topics/examples/full/)の例を以下に示す。この設定で、nginxは、
 
@@ -71,7 +71,7 @@ sudo nginx -c /usr/local/etc/nginx/nginx.conf
 
 NOTE: この例では、`.htpasswd`を含むnginxの設定ファイルの場所として、`/etc/nginx`を用いるが、インストールの仕方によって異なるであろう。他の[よくあるnginxの設定ディレクトリ](http://nginx.org/en/docs/beginners_guide.html)は、`/usr/local/nginx/conf`と`/usr/local/etc/nginx`が挙げられる。
 
-## Prometheus<span class="original-header">Prometheus </span>の設定
+## Prometheus<span class="anchor-text-supplement">Prometheus </span>の設定
 
 nginxプロキシの後ろでPrometheusを稼働させる際には、外部URLを`http://example.com/prometheus`に、ルートプリフィックスを`/`にセットする必要がある。
 
@@ -82,7 +82,7 @@ prometheus \
   --web.route-prefix="/"
 ```
 
-## <span class="original-header">Testing</span>テスト
+## <span class="anchor-text-supplement">Testing</span>テスト
 
 If you'd like to test out the nginx proxy locally using the `example.com` domain, you can add an entry to your `/etc/hosts` file that re-routes `example.com` to `localhost`:
 

@@ -3,7 +3,7 @@ title: 用語集
 sort_rank: 8
 ---
 
-# <span class="original-header">Glossary</span>用語集
+# <span class="anchor-text-supplement">Glossary</span>用語集
 
 
 ### アラート（alert）

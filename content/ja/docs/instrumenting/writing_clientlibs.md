@@ -3,14 +3,14 @@ title: クライアントライブラリの書き方
 sort_rank: 2
 ---
 
-# <span class="original-header">Writing client libraries</span>クライアントライブラリの書き方
+# <span class="anchor-text-supplement">Writing client libraries</span>クライアントライブラリの書き方
 
 このドキュメントは、簡単なユースケースは簡単にし、ユーザーを間違った方向へ導いてしまう機能を回避できるようなライブラリ間の一貫性を目的として、Prometheusクライアントライブラリがどのような機能とAPIを提供すべきかについて説明する。
 
 これを書いている時点で、[10言語](/ja/docs/instrumenting/clientlibs)でサポートされており、クライアントをどう書くかについてよく分かっている。
 このガイドラインは、新しいクライアントライブラリの作者が良いライブラリを開発する助けになることを目的としている。
 
-## <span class="original-header">Conventions</span>慣例
+## <span class="anchor-text-supplement">Conventions</span>慣例
 
 「しなければならない（ MUST ）」、 「してはならない（ MUST NOT ）」、 「する必要がある（ SHOULD ）」、「しないほうがよい（ SHOULD NOT ）」、「してもよい（ MAY ）」は、[https://www.ietf.org/rfc/rfc2119.txt](https://www.ietf.org/rfc/rfc2119.txt)（[日本語訳](https://www.ipa.go.jp/security/rfc/RFC2119JA.html)）で定められた意味を持つ。
 
@@ -31,7 +31,7 @@ sort_rank: 2
 * ものごとの現在の状態（およびその限度）を追跡するするためのゲージ
 * バッチジョブの監視
 
-## <span class="original-header">Overall structure</span>全体の構造
+## <span class="anchor-text-supplement">Overall structure</span>全体の構造
 
 クライアントは、内部的にはコールバックベースで書かれていなければならない（MUST）。
 クライアントは、一般的にここで述べられている構造に従っている必要がある（ SHOULD ）。
@@ -55,7 +55,7 @@ CollectorRegistryは、関数`register()`/`unregister()`を提供する必要が
 
 Cのように、オブジェクト指向でない言語では、現実的な範囲でこの構成になるよう心がけるべきである。
 
-### <span class="original-header">Naming</span>命名
+### <span class="anchor-text-supplement">Naming</span>命名
 
 クライアントライブラリは、取り組んでいる言語の命名規約を鑑みつつ、このドキュメントに書かれている関数/メソッド/クラス/名に従う必要がある（SHOULD）。
 例えば、Pythonでは`set_to_current_time()`が酔いが、Goでは`SetToCurrentTime()`の方がよく、Javaでは`setToCurrentTime()`が慣例である。
@@ -63,7 +63,7 @@ Cのように、オブジェクト指向でない言語では、現実的な範�
 
 ライブラリは、ここであげるものと同じまたは類似の名前で別の意味を持つ関数/メソッド/クラスを提供してはならない（MUST NOT）。
 
-## <span class="original-header">Metrics</span>メトリクス
+## <span class="anchor-text-supplement">Metrics</span>メトリクス
 
 カウンター、ゲージ、サマリー、ヒストグラムの[メトリック型](/ja/docs/concepts/metric_types/)が、ユーザーが使う主要なインターフェースである。
 
@@ -99,7 +99,7 @@ class YourClass {
 `register()`ではなく`build()`を呼び出したことで、このメトリックは登録されるない（単体テストに便利である）。
 `register()`にCollectorRegistryを渡すこともできる（バッチジョブに便利である）。
 
-### <span class="original-header">Counter</span>カウンター
+### <span class="anchor-text-supplement">Counter</span>カウンター
 
 [カウンター](/ja/docs/concepts/metric_types/#counter)は、単調増加するカウンターである。
 カウンターは、値を減少させてはならない（MUST NOT）が、サーバーの再起動などで、0にリセットしてもよい（MAY）。
@@ -116,7 +116,7 @@ class YourClass {
 
 カウンターは0で始まらなければならない（MUST)。
 
-### <span class="original-header">Gauge</span>ゲージ
+### <span class="anchor-text-supplement">Gauge</span>ゲージ
 
 [ゲージ](/ja/docs/concepts/metric_types/#gauge)は、増加/減少する値を表す。
 
@@ -145,7 +145,7 @@ class YourClass {
 これはJavaでは、startTimer/setDurationであり、Pythonでは、`time()` decorator/context managerである。
 これは、サマリー/ヒストグラムのパターンに合わせる（ただし`observe()`の代わりに`set()`とする）必要がある（SHOULD）。
 
-### <span class="original-header">Summary</span>サマリー
+### <span class="anchor-text-supplement">Summary</span>サマリー
 
 [サマリー](/ja/docs/concepts/metric_types/#summary)は、時間のスライディングウインドウに渡る（普通はリクエスト時間のような）観測値を採取し、ある特定の瞬間のその分布、頻度、合計に関する情報を提供する。
 
@@ -168,7 +168,7 @@ Javaでは、これは`startTimer`/`observeDuration`である。
 
 サマリーの`_count`/`_sum`は0から始まらなければならない（MUST）。
 
-### <span class="original-header">Histogram</span>ヒストグラム
+### <span class="anchor-text-supplement">Histogram</span>ヒストグラム
 
 [ヒストグラム](/ja/docs/concepts/metric_types/#histogram)は、リクエストのレイテンシーのようなイベントの分布が集約可能になる。
 ヒストグラムは、本質的には、バケットごとのカウンターである。
@@ -201,7 +201,7 @@ Pythonでは、これは`time()`decorator/context managerである。
 
 よりシンプルにできるよくあるユースケースがあれば、望まない振る舞い（最適ではないメトリック/ラベルの構成、クライアントでの計算）が助長されない限り、そうすること。
 
-### <span class="original-header">Labels</span>ラベル
+### <span class="anchor-text-supplement">Labels</span>ラベル
 
 ラベルは、Prometheusの[最も強力な機能](/ja/docs/practices/instrumentation/#use-labels)の1つであるが、[簡単に使い過ぎになる](/ja/docs/practices/instrumentation/#do-not-overuse-labels)。
 従って、クライアントライブラリは、ラベルがどのようにユーザーに提供されるかについてかなり気をつけなければならない。
@@ -236,7 +236,7 @@ invalidate caching of Children.
 与えられたChildをデフォルト値で初期化する方法（普通は`labels()`を呼び出すだけ）がある必要がある（SHOULD）。
 [メトリクスの欠落の問題](/ja/docs/practices/instrumentation/#avoid-missing-metrics)を回避するために、ラベルのないメトリクスは常に初期化されなければならない。
 
-### <span class="original-header">Metric names</span>メトリック名
+### <span class="anchor-text-supplement">Metric names</span>メトリック名
 
 メトリック名は、[仕様](/ja/docs/concepts/data_model/#metric-names-and-labels)に従わなければならない。
 ラベル名と同様に、ゲージ/カウンター/サマリー/ヒストグラムの使い方およびそのライブラリで提供されている他のCollectorに合っていなければならない（MUST）。
@@ -247,7 +247,7 @@ invalidate caching of Children.
 独自のCollectorが他の監視システムからプロキシする場合を除いて、メトリック名またはメトリック名の一部を動的にするまたは生成することは、抑止されなければならない（MUST）。
 メトリック名を動的にするまたは生成することは、代わりにラベルを使うべきであるという兆しである。
 
-### <span class="original-header">Metric description and help</span>メトリックの説明とヘルプ
+### <span class="anchor-text-supplement">Metric description and help</span>メトリックの説明とヘルプ
 
 ゲージ/カウンター/サマリー/ヒストグラムは、メトリックの説明とヘルプが提供されることを要求しなければならない（MUST）。
 
@@ -257,20 +257,20 @@ invalidate caching of Children.
 なぜなら、誰かがdocsを書きたくないなら我々はその人にdocsが書きたくなるように説得することはないからである。
 ライブラリで提供されているCollector（および、実際にはエコシステムのできる限り全ての所で）は、良質のメトリックの説明を提供する必要がある（SHOULD）。
 
-## <span class="original-header">Exposition</span>出力
+## <span class="anchor-text-supplement">Exposition</span>出力
 
 クライアントは、[出力フォーマット](/ja/docs/instrumenting/exposition_formats)のドキュメントに書かれているテキストベースの出力フォーマットを実装しなければならない（MUST）。
 
 多大なコストを必要とせず実装できるなら、（特に人間にとって可読性の高いフォーマットにするために）出力されるメトリクスを再現性のある順番にすることが望ましい（ENCOURAGED）。
 
-## <span class="original-header">Standard and runtime </span>標準的なランタイムのcollector<span class="original-header">s</span>
+## <span class="anchor-text-supplement">Standard and runtime </span>標準的なランタイムのcollector<span class="anchor-text-supplement">s</span>
 
 クライアントライブラリは、後述の標準的なライブラリが出力しているもののうち可能なものは提供する必要がある（SHOULD）。
 
 これらは、独自のcollectorとして実装され、デフォルトでデフォルトのCollectorRegistryに登録される必要がある（SHOULD）。
 これらが邪魔になるとてもニッチなユースケースがあるので、これらを無効にする方法がある必要がある（SHOULD）。
 
-### <span class="original-header">Process metrics</span>プロセスのメトリクス
+### <span class="anchor-text-supplement">Process metrics</span>プロセスのメトリクス
 
 これらの出力は`process_`というプリフィックスをつける必要がある。
 言語やランタイムからこれらの数値のどれかを取得できないならば、クライアントライブラリがそれを出力することはないだろう。
@@ -287,18 +287,18 @@ invalidate caching of Children.
 | `process_heap_bytes`               | プロセスのヒープサイズ（バイト）         | バイト        |
 | `process_start_time_seconds`       | プロセスの開始時間（unixエポックからの秒）| 秒           |
 
-### <span class="original-header">Runtime metrics</span>ランタイムのメトリクス
+### <span class="anchor-text-supplement">Runtime metrics</span>ランタイムのメトリクス
 
 さらに、クライアントライブラリは、言語のランタイムのメトリクスという観点で意味のあるもの（例えば、GCの統計）ならなんでも、適切なプリフィックス（例えば`go_`、`hostspot_`など）を付けて提供することが望ましい（ENCOURAGED）。
 
-## <span class="original-header">Unit tests</span>単体テスト
+## <span class="anchor-text-supplement">Unit tests</span>単体テスト
 
 クライアントライブラリには、メトリクス組み込みの中核および出力をカバーする単体テストがある必要がある（SHOULD）。
 
 クライアントライブラリは、ユーザーが自分のメトリクス組み込みコードを単体テストするのが簡単になる方法を提供することが望ましい（ENCOURAGED）。
 例えば、Pythonでは、`CollectorRegistry.get_sample_value`がある。
 
-## <span class="original-header">Packaging and dependencies</span>パッケージと依存
+## <span class="anchor-text-supplement">Packaging and dependencies</span>パッケージと依存
 
 理想を言えば、クライアントライブラリは、どんなアプリケーションにも、アプリケーションを壊すことなく、メトリクスを追加するためにインクルードできる。
 
@@ -308,7 +308,7 @@ invalidate caching of Children.
 こういった問題が出てきたら、中核となるメトリクス組み込みを、特定のフォーマットでのメトリクスのブリッジ/出力から分離することが推奨されている。
 例えば、Javaのモジュール`simpleclient`は依存がなく、`simpleclient_servlet`がHTTPの依存を少し持っている。
 
-## <span class="original-header">Performance considerations</span>パフォーマンスの考慮
+## <span class="anchor-text-supplement">Performance considerations</span>パフォーマンスの考慮
 
 クライアントライブラリはスレッドセーフでなければならないので、なんらかの形で並行性の制御が必要であり、マルチコアのマシンとアプリケーション上でのパフォーマンスを考慮しなければならない。
 

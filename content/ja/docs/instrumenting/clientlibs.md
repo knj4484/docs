@@ -3,7 +3,7 @@ title: クライアントライブラリ
 sort_rank: 1
 ---
 
-# <span class="original-header">Client libraries</span>クライアントライブラリ
+# <span class="anchor-text-supplement">Client libraries</span>クライアントライブラリ
 
 自分のサービスの監視をするには、Prometheusクライアントライブラリのどれかを利用して、そのコードにメトリクス組み込みを追加する必要がある。
 それらのライブラリは、Prometheusの[メトリック型](/ja/docs/concepts/metric_types/)を実装している。

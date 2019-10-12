@@ -4,7 +4,7 @@ sort_rank: 1
 nav_icon: sliders
 ---
 
-# <span class="original-header">Alerting Overview</span>アラート概要
+# <span class="anchor-text-supplement">Alerting Overview</span>アラート概要
 
 Prometheusのアラートは、二つの部分に分けられている。 Prometheusサーバーのアラートルールは、Alertmanagerにアラートを送る。 [Alertmanager](../alertmanager)は、アラートを一時停止したり、アラートの依存関係を元に通知を抑制したり、集約したり、eメールやPagerDuty、HipChatなどの方法での通知の送信などを含むそれらアラートの管理を行う。
 

@@ -4,7 +4,7 @@ sort_rank: 6
 nav_icon: sliders
 ---
 
-# <span class="original-header">Sending alerts</span>アラートの送信
+# <span class="anchor-text-supplement">Sending alerts</span>アラートの送信
 
 **免責事項**: Prometheusは、アラートルールで生成されたアラートを自動的に送信する。 直接クライアントを実装するのではなく、時系列データに基づいた[アラートルール](../../prometheus/latest/configuration/alerting_rules/)をPrometheusに設定することを強くお勧めする。
 

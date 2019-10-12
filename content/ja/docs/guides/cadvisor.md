@@ -2,7 +2,7 @@
 title: DockerコンテナメトリクスをcAdvisorを用いて監視する方法
 ---
 
-# <span class="original-header">Monitoring </span>Docker<span class="original-header"> container metrics using </span>コンテナメトリクスをcAdvisorを用いて監視する方法
+# <span class="anchor-text-supplement">Monitoring </span>Docker<span class="anchor-text-supplement"> container metrics using </span>コンテナメトリクスをcAdvisorを用いて監視する方法
 
 [cAdvisor](https://github.com/google/cadvisor)(**c**ontainer **Advisor**の略)は、稼働中のコンテナのリソース消費とパフォーマンスのデータを分析しexposeする。
 cAdvisorは、初期状態で、Prometheusのメトリクスを出力する。
@@ -24,7 +24,7 @@ scrape_configs:
     - cadvisor:8080
 ```
 
-## Docker Compose<span class="original-header"> configuration</span>の設定
+## Docker Compose<span class="anchor-text-supplement"> configuration</span>の設定
 
 どのポートをexposeするか、どのボリュームを使うかなどに加えて、どのコンテナがインストールの一部かを指定するDocker Compose [configuration](https://docs.docker.com/compose/compose-file/)が必要となる。
 
@@ -97,12 +97,12 @@ prometheus   /bin/prometheus --config.f ...   Up      0.0.0.0:9090->9090/tcp
 redis        docker-entrypoint.sh redis ...   Up      0.0.0.0:6379->6379/tcp
 ```
 
-## <span class="original-header">Exploring the </span>cAdvisor Web UIの調査
+## <span class="anchor-text-supplement">Exploring the </span>cAdvisor Web UIの調査
 
 cAdvisorのweb UIは、`http://localhost:8080`で見ることが出来る。特定のコンテナの統計やグラフは、`http://localhost:8080/docker/<container>`で調べることが出来る。
 例えば、Redisコンテナのメトリクスは`http://localhost:8080/docker/redis`で、Prometheusのメトリクスは`http://localhost:8080/docker/prometheus`で見ることが出来る。
 
-## <span class="original-header">Exploring metrics in the </span>expression<span class="original-header"> browser</span>ブラウザでのメトリクスの調査
+## <span class="anchor-text-supplement">Exploring metrics in the </span>expression<span class="anchor-text-supplement"> browser</span>ブラウザでのメトリクスの調査
 
 cAdvisorのweb UIは、cAdvisorが監視しているものを調査するには便利だが、コンテナのメトリクスの調査のためのインターフェースを提供していない。
 そのためには、`http://localhost:9090/graph`で見られるPrometheusの[expressionブラウザ](/ja/docs/visualization/browser)が必要である。
@@ -116,7 +116,7 @@ cAdvisorのweb UIは、cAdvisorが監視しているものを調査するには�
 
 NOTE: cAdvisorが収集するコンテナのメトリクスの完全な一覧は、[cAdvisorのドキュメント](https://github.com/google/cadvisor/blob/master/docs/storage/prometheus.md)で見ることが出来る。
 
-## <span class="original-header">Other </span>その他のexpression<span class="original-header">s</span>
+## <span class="anchor-text-supplement">Other </span>その他のexpression<span class="anchor-text-supplement">s</span>
 
 以下の表にその他のexpressionの例をいくつか示す
 
@@ -127,7 +127,7 @@ Expression | Description | For
 [`rate(container_network_transmit_bytes_total[1m])`](http://localhost:9090/graph?g0.range_input=1h&g0.expr=rate(container_network_transmit_bytes_total%5B1m%5D)&g0.tab=1) | 最後の1分でコンテナがネットワークに送信したバイト/秒 | 全てのコンテナ
 [`rate(container_network_receive_bytes_total[1m])`](http://localhost:9090/graph?g0.range_input=1h&g0.expr=rate(container_network_receive_bytes_total%5B1m%5D)&g0.tab=1) | 最後の1分でコンテナがネットワークから受信したバイト/秒 | 全てのコンテナ
 
-## <span class="original-header">Summary</span>まとめ
+## <span class="anchor-text-supplement">Summary</span>まとめ
 
 このガイドでは、Docker Composeを使って、PrometheusコンテナがcAdvisorからメトリクスをscrapeし、cAdvisorはRedisコンテナが生成したメトリクスを収集するように、一つの設定で三つの別々のコンテナを動かした。
 また、Prometheusのexpressionブラウザを使って、cAdvisorコンテナのいくつかのメトリクスを調査した。

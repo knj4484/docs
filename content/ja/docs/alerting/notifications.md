@@ -2,7 +2,7 @@
 title: 通知テンプレートのリファレンス
 sort_rank: 7
 ---
-# <span class="original-header">Notification Template Reference</span>通知テンプレートのリファレンス
+# <span class="anchor-text-supplement">Notification Template Reference</span>通知テンプレートのリファレンス
 
 Prometheusはアラートを作成しAlertmanagerに送信する。Alertmanagerは、アラートのラベルに基づいて様々なレシーバーに通知を送る。レシーバーは、Slack、PagerDuty、eメール、一般的なwebhookインターフェースを介した連携先の一つである。
 
@@ -11,7 +11,7 @@ Prometheusでアラートルールのラベル/アノテーションにもテン
 
 Alertmanagerの通知のテンプレートは、[Go templating](http://golang.org/pkg/text/template)を基にしている。テキストとして評価されるフィールドもあるし、エスケープに影響するHTMLとして評価されるフィールドもあることに注意すること。
 
-# <span class="original-header">Data Structures</span>データ構造
+# <span class="anchor-text-supplement">Data Structures</span>データ構造
 
 ## Data
 
@@ -59,7 +59,7 @@ type KV map[string]string
 
 `KV`として保存されているデータへの直接のアクセスに加えて、ソート、削除、LabelSetsを見るためのメソッドがある。
 
-### <span class="original-header">KV methods</span>KVのメソッド
+### <span class="anchor-text-supplement">KV methods</span>KVのメソッド
 |  名前         | 引数          | 戻り値   | 備考     |
 | ------------- | ------------- | -------- | -------- |
 | SortedPairs | - | Pairs (list of key/value string pairs.) | ソートされたkey/valueペアのリストを返す |
@@ -67,11 +67,11 @@ type KV map[string]string
 | Names | - | []string | LabelSet中のラベル名を返す |
 | Values | - | []string | LabelSet中の値のリストを返す |
 
-# <span class="original-header">Functions</span>関数
+# <span class="anchor-text-supplement">Functions</span>関数
 
 Go templatingによって[default functions](http://golang.org/pkg/text/template/#hdr-Functions)も提供されていることに注意。
 
-## <span class="original-header">Strings</span>文字列
+## <span class="anchor-text-supplement">Strings</span>文字列
 
 |  名前         | 引数          | 戻り値   | 備考     |
 | ------------- | ------------- | -------- | -------- |

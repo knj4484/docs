@@ -3,9 +3,9 @@ title: 概要
 sort_rank: 1
 ---
 
-# 概要
+# <span class="anchor-text-supplement">Overview</span>概要
 
-## <span class="original-header">What is </span>Prometheusとは
+## <span class="anchor-text-supplement">What is </span>Prometheusとは
 
 [Prometheus](https://github.com/prometheus)は、オープンソースのシステム監視およびアラートのツールキットであり、もともとSoundCloudで開発されていた。
 2012年の発足以来、多くの企業と組織がPrometheusを採用し、プロジェクトは活発な開発者と[ユーザーコミュニティ](https://prometheus.io/community/)を擁している。
@@ -14,7 +14,7 @@ sort_rank: 1
 
 さらに詳しいPrometheusの概要は、[メディア](/ja/docs/introduction/media/)からリンクされているリソースを参照すること。
 
-### <span class="original-header">Features</span>機能
+### <span class="anchor-text-supplement">Features</span>機能
 
 Prometheusの主な機能は、
 
@@ -26,7 +26,7 @@ Prometheusの主な機能は、
 * サービスディスカバリーと静的な設定による監視対象の検出
 * 複数の方式でのグラフ化とダッシュボードのサポート
 
-### <span class="original-header">Components</span>コンポーネント
+### <span class="anchor-text-supplement">Components</span>コンポーネント
 
 Prometheusのエコシステムは、複数のコンポーネントからなり、その多くは必須ではない
 
@@ -39,7 +39,7 @@ Prometheusのエコシステムは、複数のコンポーネントからなり�
 
 ほとんどのPrometheusのコンポーネントは、静的なバイナリとして簡単にビルドとデプロイできるように、[Go](https://golang.org/)で書かれている
 
-### <span class="original-header">Architecture</span>アーキテクチャー
+### <span class="anchor-text-supplement">Architecture</span>アーキテクチャー
 
 Prometheusとそのエコシステムのコンポーネントのアーキテクチャーを以下の図に示す
 
@@ -49,7 +49,7 @@ Prometheusは、instrumentされたジョブから、直接（または短命の
 取得したサンプルは全てローカルに保存され、集約したり、新しい時系列データを記録したり、アラートを生成するために、このデータに対してルールが実行される。
 収集されたデータを可視化するために[Grafana](https://grafana.com/)や他のAPIコンシューマーを使うことが出来る。
 
-## <span class="original-header">When does it fit?</span>Prometheusが適しているのは
+## <span class="anchor-text-supplement">When does it fit?</span>適している場面は
 
 Prometheusは、数値のみから成るあらゆる時系列データの記録に対してうまく機能する。
 マシン中心の監視にもサービス指向の動的なアーキテクチャの監視にも適している。
@@ -60,7 +60,7 @@ Prometheusは、障害時に素早く問題を診断できるようなシステ�
 インフラの他の部分に障害があっても利用可能であり、Prometheusを利用するために大規模なインフラを用意する必要がない。
 
 
-## <span class="original-header">When does it not fit?</span>Prometheusが適していないのは
+## <span class="anchor-text-supplement">When does it not fit?</span>適していない場面は
 
 Prometheusは信頼性に重きを置いている。システムについての統計を、いつでも、障害がおきている状況でも、見ることができる。
 もし、リクエストごとの請求金額などのために、100%の精度が必要ならば、Prometheusは良い選択ではない。

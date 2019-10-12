@@ -3,11 +3,11 @@ title: 代替システムとの比較
 sort_rank: 4
 ---
 
-# <span class="original-header">Comparison to alternatives</span>代替システムとの比較
+# <span class="anchor-text-supplement">Comparison to alternatives</span>代替システムとの比較
 
 ## Prometheus vs. Graphite
 
-### <span class="original-header">Scope</span>スコープ
+### <span class="anchor-text-supplement">Scope</span>スコープ
 
 [Graphite](http://graphite.readthedocs.org/en/latest/)は、クエリ言語とグラフ化機能を持った受動的な時系列データーベースであることに焦点を当てている。
 その他の事は、外部コンポーネントで解決される。
@@ -15,7 +15,7 @@ sort_rank: 4
 Prometheusは、完全な監視・トレンド分析システムであり、組み込みで能動的なスクレイピング、保存、クエリ、グラフ化、時系列に基づいたアラートを含んでいる。
 Prometheusは、世界がどうあるべきか（どのエンドポイントが存在すべきか、時系列のどんなパターンが問題を表しているかなど）について分かっていて能動的に問題を発見しようとする。
 
-### <span class="original-header">Data model</span>データモデル
+### <span class="anchor-text-supplement">Data model</span>データモデル
 
 Graphiteは、Prometheusと同じように、名前の付いた時系列の数値的なサンプルを保存する。
 しかし、Prometheusのメタデータのモデルの方が、表現力が高い。
@@ -41,7 +41,7 @@ api_server_http_requests_total{method="POST",handler="/tracks",status="500",inst
 api_server_http_requests_total{method="POST",handler="/tracks",status="500",instance="<sample3>"} -> 31
 ```
 
-### <span class="original-header">Storage</span>ストレージ
+### <span class="anchor-text-supplement">Storage</span>ストレージ
 
 Graphiteは、時系列データをローカルディスクに[Whisper](http://graphite.readthedocs.org/en/latest/whisper.html)形式で保存する。
 Whisperは、RRDスタイルのデータベースで、サンプルが規則正しい間隔でやってくることを想定している。
@@ -51,7 +51,7 @@ Prometheusも時系列ごとに1つのローカルファイルを作成するが
 新しい値は単純に追加されるので、古いデータは任意の期間保持することが可能である。
 Prometheusは短命の頻繁に更新される時系列の集合に対してもうまく機能する。
 
-### <span class="original-header">Summary</span>まとめ
+### <span class="anchor-text-supplement">Summary</span>まとめ
 
 Prometheusは、既存の環境で実行したり連携するのが簡単であるだけでなく、表現力の高いデータモデルとクエリ言語を提供する。
 長期間の過去データを保持できるクラスタ化されたソリューションが必要なら、Graphiteの方が良い選択であろう。
@@ -62,7 +62,7 @@ Prometheusは、既存の環境で実行したり連携するのが簡単であ�
 InfluxDBプロジェクトはPrometheusの開発開始のほぼ1年後にリリースされたので、我々は当時はそれが代替システムであるとXX
 今でも、PrometheusとInfluxDBには大きな違いがあり、両システムは少し違ったユースケースに合わせている。
 
-### <span class="original-header">Scope</span>スコープ
+### <span class="anchor-text-supplement">Scope</span>スコープ
 
 比較が公平になるように、InfluxDBと共に[Kapacitor](https://github.com/influxdata/kapacitor)について考えなければならない。
 なぜなら、それらは組み合わせて、PrometheusとAlertmanagerと同じ領域の問題を解決するからである。
@@ -74,7 +74,7 @@ Kapacitorのスコープは、Prometheusのレコーディングルールとア�
 Prometheusには、[グラフ化とアラートのためのもっと強力なクエリ言語](https://www.robustperception.io/translating-between-monitoring-languages/)がある。
 Alertmanagerは、さらに、グルーピング、重複排除、サイレンスの機能がある。
 
-### <span class="original-header">Data model / storage</span>データモデル / ストレージ
+### <span class="anchor-text-supplement">Data model / storage</span>データモデル / ストレージ
 
 Prometheusと同様に、InfluxDBのデータモデルはラベルとしてキーバリューペアがあり、タグと呼ばれている。
 さらに、InfluxDBは、フィールドと呼ばれる2番目のレベルのラベルをサポートする。
@@ -88,7 +88,7 @@ InfluxDBは、時間でシャードされた[log-structured merge tree for stora
 
 [Logs and Metrics and Graphs, Oh My!](https://blog.raintank.io/logs-and-metrics-and-graphs-oh-my/)がイベントロギングとメトリクスの記録の違いに付いて説明している。
 
-### <span class="original-header">Architecture</span>アーキテクチャー
+### <span class="anchor-text-supplement">Architecture</span>アーキテクチャー
 
 Prometheusサーバーはお互いに独立して稼働し、中核となる機能（スクレイピング、ルールの処理、アラート）にはローカルのストレージだけに依存している。
 オープンソース版のInfluxDBも同様である。
@@ -106,7 +106,7 @@ Influxは、可用性が高く冗長性のあるアラートシステム、[Ente
 PrometheusとAlertmanagerは、対照的に、完全にオープンソースの冗長な選択肢がある。
 Prometheusの冗長なレプリカ稼働させて、Alertmanagerの[高可用](https://github.com/prometheus/alertmanager#high-availability)モードを利用することで冗長にする。
 
-### <span class="original-header">Summary</span>まとめ
+### <span class="anchor-text-supplement">Summary</span>まとめ
 
 この2つのシステムには多くの類似性がある。
 どちらにも、多次元メトリクスを効率的にサポートするためのラベルがある（InfluxDBではタグと呼ばれる）。
@@ -134,11 +134,11 @@ Prometheusは、[完全にオープンソースで独立したプロジェクト
 
 [OpenTSDB](http://opentsdb.net/)は、[Hadoop](http://hadoop.apache.org/)と[HBase](http://hbase.apache.org/)に基づいた分散時系列データベースである。
 
-### <span class="original-header">Scope</span>スコープ
+### <span class="anchor-text-supplement">Scope</span>スコープ
 
 [Graphite](/ja/docs/introduction/comparison/#prometheus-vs-graphite)の場合と同様のスコープの差がここでも当てはまる。
 
-### <span class="original-header">Data model</span>データモデル
+### <span class="anchor-text-supplement">Data model</span>データモデル
 
 OpenTSDBのデータモデルは、Prometheusとほぼ一致する。
 時系列は、任意のキーバリューの組み合わせ（OpenTSDBのタグがPrometheusのラベルに相当する）で特定される。
@@ -147,14 +147,14 @@ OpenTSDBのデータモデルは、Prometheusとほぼ一致する。
 Prometheusはラベル値に任意の文字を許すが、OpenTSDBは制限が強い。
 OpenTSDBは、完全なクエリ言語がなく、APIを通じた簡単な集約と計算ができるだけである。
 
-### <span class="original-header">Storage</span>ストレージ
+### <span class="anchor-text-supplement">Storage</span>ストレージ
 
 [OpenTSDB](http://opentsdb.net/)のストレージは、[Hadoop](http://hadoop.apache.org/)と[HBase](http://hbase.apache.org/)の上で実装されている。
 これは、OpenTSDBを水平にスケールさせるのが容易であるが、最初からHadoop/HBaseクラスタを運用する全体的な複雑性を受け入れなければならないことを意味している。
 
 Prometheusは、初期の運用は単純だが、1つのノードの容量を越えると明示的にシャーディングする必要がある。
 
-### <span class="original-header">Summary</span>まとめ
+### <span class="anchor-text-supplement">Summary</span>まとめ
 
 Prometheusの方が、かなり表現力の高いクエリ言語を提供し、ラベル値の種類の多いメトリクスを扱うことができ、完全な監視システムの一部となる。
 もし既にHadoopを運用しており、これらの利益より長期ストレージに価値があるなら、OpenTSDBは良い選択である。
@@ -163,7 +163,7 @@ Prometheusの方が、かなり表現力の高いクエリ言語を提供し、�
 
 [Nagios](https://www.nagios.org/)は、90年代にNetSaintとして始まった監視システムである。
 
-### <span class="original-header">Scope</span>スコープ
+### <span class="anchor-text-supplement">Scope</span>スコープ
 
 Nagios is primarily about alerting based on the exit codes of scripts. These are 
 called “checks”. There is silencing of individual alerts, however no grouping, 
@@ -180,24 +180,24 @@ perfDataプラグイン
 は、[Graphiteなどの時系列データーベースに送る](https://github.com/shawn-sterling/graphios)ことができる。
 [リモートのマシン上でチェックを実行する](https://exchange.nagios.org/directory/Addons/Monitoring-Agents/NRPE--2D-Nagios-Remote-Plugin-Executor/details)ためにNRPEを使う
 
-### <span class="original-header">Data model</span>データモデル
+### <span class="anchor-text-supplement">Data model</span>データモデル
 
 Nagiosはホストベースである。
 各ホストは複数のサービスを持つことができ、各サービスは1つのチェックを実行する。
 
 ラベルやクエリ言語といった概念はない。
 
-### <span class="original-header">Storage</span>ストレージ
+### <span class="anchor-text-supplement">Storage</span>ストレージ
 
 Nagios自体には、現在のチェックの状態を超えたストレージはない。
 [可視化のため](https://docs.pnp4nagios.org/)などにデータを保存できるプラグインはある。
 
-### <span class="original-header">Architecture</span>アーキテクチャー
+### <span class="anchor-text-supplement">Architecture</span>アーキテクチャー
 
 Nagiosサーバーはスタンドアローンである。
 チェックの設定は全てファイルで行う。
 
-### <span class="original-header">Summary</span>まとめ
+### <span class="anchor-text-supplement">Summary</span>まとめ
 
 Nagiosは、ブラックボックスの検査で十分な小さいシステムや静的なシステムの基本的な監視に適している。
 
@@ -208,28 +208,28 @@ Nagiosは、ブラックボックスの検査で十分な小さいシステム�
 [Sensu](https://sensu.io) is a composable monitoring pipeline that can reuse existing Nagios checks.
 [Sensu](https://sensu.io)は、既存のNagiosのチェックを再利用できる。
 
-### <span class="original-header">Scope</span>スコープ
+### <span class="anchor-text-supplement">Scope</span>スコープ
 
 Nagiosの場合と同様の一般的なスコープの差がここでも当てはまる。
 
 アドホックなチェックの結果をSensuにプッシュできるようにする[クライアントソケット](https://docs.sensu.io/sensu-core/latest/reference/clients/#what-is-the-sensu-client-socket)もある。
 
-### <span class="original-header">Data model</span>データモデル
+### <span class="anchor-text-supplement">Data model</span>データモデル
 
 [Nagios](/ja/docs/introduction/comparison/#prometheus-vs-nagios)と同じ大雑把なデータモデルを持つ。
 
-### <span class="original-header">Storage</span>ストレージ
+### <span class="anchor-text-supplement">Storage</span>ストレージ
 
 Sensuは、Sensuクライアントのレジストリ、チェック結果、チェック実行履歴、現在のイベントのデータを含む監視データを永続化するためにRedisを利用する。
 
-### <span class="original-header">Architecture</span>アーキテクチャー
+### <span class="anchor-text-supplement">Architecture</span>アーキテクチャー
 
 Sensuには、[多くのコンポーネント](https://docs.sensu.io/sensu-core/latest/overview/architecture/)がある。
 メッセージの送受信にRabbitMQ、現在の状態についてはRedis、処理とAPIアクセスのために別のサーバーを使う。
 
 Sensuデプロイの全てのコンポーネント（RabbitMQ、Redis、Sensu Server/API）は、可用性が高く冗長な構成にするためにクラスタ化できる。
 
-### <span class="original-header">Summary</span>まとめ
+### <span class="anchor-text-supplement">Summary</span>まとめ
 
 そのままスケールさせたい既存のNagiosが構築されていたり、Sensuの自動登録機能を使いたい場合は、Sensuが良い選択である。
 

@@ -3,20 +3,20 @@ title: アラート
 sort_rank: 5
 ---
 
-# <span class="original-header">Alerting</span>アラート
+# <span class="anchor-text-supplement">Alerting</span>アラート
 
 Googleで見たことに基づくRob Ewaschukの[My Philosophy on Alerting](https://docs.google.com/a/boxever.com/document/d/199PqyG3UsyXlwieHaqbGiWVa8eMWi8zzAn0YfcApr8Q/edit)を読むことをお勧めする。
 
 まとめると、アラートをシンプルに保つ、症状についてアラートする、原因を特定できるように良いコンソールを持つ、何もすることがない呼び出しを避けることである。
 
-## <span class="original-header">What to alert on</span>何についてアラートするか
+## <span class="anchor-text-supplement">What to alert on</span>何についてアラートするか
 
 苦痛を起こし得る可能性全てを捉えようとするのではなく、エンドユーザーの苦痛に結びついた症状についてアラーティングすることで、可能な限り少ないアラートが来ることを目指すこと。
 アラートには、関連するコンソールへのリンクがあって、どのコンポーネントが問題かがわかりやすくなっているべきである。
 
 小さな問題は許容するようにアラートに余裕を持たせること。
 
-### <span class="original-header">Online serving systems</span>online-servingシステム
+### <span class="anchor-text-supplement">Online serving systems</span>online-servingシステム
 
 一般的に、可能な限り高いレイヤーのレイテンシーとエラー率についてアラートすること。
 
@@ -30,12 +30,12 @@ Googleで見たことに基づくRob Ewaschukの[My Philosophy on Alerting](http
 リクエストが種類によって異なる特徴を持つなら、それらに対して異なるアラートが必要になるだろう。
 そうしなければ、トラフィックの少ない種類のリクエストの問題は、トラフィックの多いリクエストに埋れて消えてしまうだろう。
 
-### <span class="original-header">Offline processing</span>オフライン処理
+### <span class="anchor-text-supplement">Offline processing</span>オフライン処理
 
 オフライン処理システムに対しては、鍵となるメトリックは、データがシステムに入ってから出るまでにどれぐらいかかるかである。
 したがって、それがユーザーに影響を与えるぐらいまで高くなったら、呼び出しをするべきである。
 
-### <span class="original-header">Batch jobs</span>バッチジョブ
+### <span class="anchor-text-supplement">Batch jobs</span>バッチジョブ
 
 バッチジョブに対しては、直近で十分に成功しておらずユーザーに見える問題を起こしそうな場合に呼び出しを行うのが合理的である。
 
@@ -43,11 +43,11 @@ Googleで見たことに基づくRob Ewaschukの[My Philosophy on Alerting](http
 4時間ごとに実行され1時間かかるジョブに対しては、10時間が合理的な閾値であろう。
 もし、一回の実行の失敗も耐えられないのであれば、一回の失敗で人間の介在が必要とならないように、ジョブをもっと頻繁に実行すること。
 
-### <span class="original-header">Capacity</span>キャパシティ
+### <span class="anchor-text-supplement">Capacity</span>キャパシティ
 
 ユーザーへの影響をすぐに起こす問題ではないが、キャパシティに注意することは、近い将来の不測の事態を避けるために、しばしば人間の介在を必要とする。
 
-### <span class="original-header">Metamonitoring</span>メタ監視
+### <span class="anchor-text-supplement">Metamonitoring</span>メタ監視
 
 監視が動いていると確信を持つことは重要である。
 したがって、Prometheusサーバー、Alertmanager、Pushgatewayおよびその他の監視インフラが正しく動いていると保証するためにアラートするべきである。
