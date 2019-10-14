@@ -1,53 +1,58 @@
-# Prometheusドキュメント和訳
+# Prometheus Documentation
 
-このリポジトリは、[Prometheusドキュメント](https://github.com/prometheus/docs)の和訳で、コンテンツと静的なサイトを生成するコードの両方が含まれている。
+This repository contains both the content and the static-site generator code for the
+Prometheus documentation site.
 
 ## Contributing Changes
 
-新しくこのリポジトリに貢献したい場合の一般的な手順については[`CONTRIBUTING.md`](CONTRIBUTING.md)を参照すること。
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for general instructions for new Prometheus contributors.
 
-[`content/docs`](content/docs)に主なドキュメントの内容が置かれている。
+The main documentation contents of this website are located in the [`content/docs`](content/docs) directory.
 
-Prometheusサーバーに関するドキュメントの和訳は、[別のリポジトリ](https://github.com/knj4484/prometheus/tree/release-ja-2.8/docs)で管理されている。
+Documentation concerning the Prometheus server is [maintained in the Prometheus server repository](https://github.com/prometheus/prometheus/tree/master/docs) and cloned into the website at build time.
 
-ガイドラインとして、このドキュメントを一般的に適用できるように保ち、ユースケースに特有の変更は避けること。
+As a guideline, please keep the documentation generally applicable and avoid use-case-specific changes.
+
+For Japanese translation, see [README-ja.md](./README-ja.md).
 
 ## Prerequisites
 
-[bundler](https://bundler.io/)を含むRuby環境を準備した上で、以下のコマンドで必要なgemをインストールする。
+You need to have a working Ruby environment set up (including [bundler](https://bundler.io/))
+and then install the necessary gems:
 
 ```bash
-cd prometheus_docs_ja
+cd docs
 make bundle
 ```
 
 ## Building
 
-静的なサイトを生成するために以下のコマンドを実行する。
+To generate the static site, run:
 
 ```bash
 make build
 ```
 
-生成された静的なサイトは`output`ディレクトリに保存される。
+The resulting static site will be stored in the `output` directory.
 
-APIのレート制限を避けるためにAPIトークンを利用することも出来る。APIトークンは https://github.com/settings/tokens/new から取得できる。
+Optionally, you can use an API token to avoid rate limits on the API. You can get an API token from https://github.com/settings/tokens/new.
 ```bash
 export GITHUB_AUTHENTICATION='-u user:token'
 ```
 
 ## Development Server
 
-生成されたサイトをローカルのサーバーで表示するには、以下のコマンドを実行する。
+To run a local server that displays the generated site, run:
 
 ```bash
-# 関連ファイルが変更されたらサイトがリビルドされるようにする
+# Rebuild the site whenever relevant files change:
 make guard
-# 別のシェルでローカル開発サーバーを起動する
+# Start the local development server in a separate shell:
 make serve
 ```
 
-これで生成されたサイトが[http://localhost:3000/docs/introduction/overview/](http://localhost:3000/docs/introduction/overview/)で閲覧できるはずである。
+You should now be able to view the generated site at
+[http://localhost:3000/](http://localhost:3000).
 
 ## Automatic Deployment
 
